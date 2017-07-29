@@ -11,7 +11,7 @@ namespace SmartShop.DAL
 {
     using System;
     using System.Collections.Generic;
-
+    
     public partial class ProductGroup
     {
         public int ProductGroupID { get; set; }

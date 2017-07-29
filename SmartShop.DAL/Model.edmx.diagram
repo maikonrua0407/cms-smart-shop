@@ -21,7 +21,6 @@
         <EntityTypeShape EntityType="SmartShopModel.MemberGroup" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SmartShopModel.Product" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SmartShopModel.ProductDesign" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductGroup" Width="1.5" PointX="13.75" PointY="8.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SmartShopModel.ProductMaterial" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SmartShopModel.ProductSet" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
         <EntityTypeShape EntityType="SmartShopModel.ProductSize" Width="1.5" PointX="13.75" PointY="11.75" IsExpanded="true" />
@@ -53,6 +52,7 @@
         <AssociationConnector Association="SmartShopModel.FK_InventoryDetail_Inventory" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_ShoppingOrderDetail_ShoppingOrder" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_StockOrderDetail_StockOrder" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductGroup" Width="1.5" PointX="7.375" PointY="19.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

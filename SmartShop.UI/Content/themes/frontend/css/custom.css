@@ -14,6 +14,10 @@
     padding-right: 0;
 }
 
+.no-padding-left {
+    padding-left: 0;
+}
+
 .list-unstyled {
     margin-top: 10px;
     margin-left: 0;
@@ -111,8 +115,9 @@
     }
 
 .cate-item .title {
-    background: #428bca;
-    padding: 10px;
+    background: #105caa;
+    font-size: 17px;
+    padding: 7px;
 }
 
     .cate-item .title a, .cate-item .title a:hover {
@@ -289,32 +294,19 @@ ul.parent-category > li:hover > ul, ul.parent-category > li > ul > li:hover > ul
         }
 /*category style*/
 .nav-cat-title {
-    padding: 10px 15px;
+    padding: 6px;
     background: #e84d1c;
     color: #fff;
 }
 
     .nav-cat-title a {
         color: #fff;
-        font-size: 18px;
-        font-weight: bold;
+        font-size: 17px;
     }
 
 #widget-sanpham {
     margin-top: -20px;
 }
-
-    #widget-sanpham .cate-item {
-        padding: 0 10px;
-    }
-
-        #widget-sanpham .cate-item .title {
-            padding: 0 10px 10px 10px;
-        }
-
-            #widget-sanpham .cate-item .title a {
-                font-size: 16px;
-            }
 
 .contentbestbuy {
     padding: 0;
@@ -332,13 +324,62 @@ ul.cate-top-img {
     color: #3e4d5c;
 }
 
-    .cate-top-img a:hover p {
-        color: #E02222;
-    }
-    .cate-top-img a:hover {
-        text-decoration: none;
-    }
+.cate-top-img a:hover p {
+    color: #E02222;
+}
+
+.cate-top-img a:hover {
+    text-decoration: none;
+}
 
 .product-item h3 a:hover {
     text-decoration: none;
+}
+
+.parent-cate-title p {
+    font-weight: normal;
+}
+
+.product-item {
+    min-height: 260px;
+    padding: 5px 5px 5px;
+}
+
+.owl-buttons {
+    top: 240px;
+}
+
+.logo img {
+    width: 220px;
+}
+
+.owl-carousel {
+    background: #fff;
+}
+
+.product-item:hover {
+    box-shadow: none;
+}
+
+.pi-price {
+    font-size: 15px;
+}
+
+.nav-pro-title {
+    padding: 10px;
+    background: #c5c5c5;
+    margin-bottom: 10px;
+}
+
+.header-navigation > ul > li > a {
+    padding: 5px;
+    color : #e25326;
+    font-size: 14px;
+    text-transform: capitalize;
+}
+.ecommerce .header-navigation > ul > li > a{
+    padding: 5px;
+    color : #e25326;
+    font-size: 14px;
+    text-transform: capitalize;
 }

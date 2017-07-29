@@ -31,10 +31,10 @@
                         }
                         foreach (var cate in groupTop)
                         {
-                            var src = !string.IsNullOrEmpty(cate.Img) ? cate.Img : "/Media/Products/no-image.jpg";
+                            var src = HeThong.duongdan_anhSP(0, cate.Img);
                             <div>
                                 <a href="#">
-                                    <img src="@src" alt="@cate.GroupName" title="@cate.GroupName"/>
+                                    <img src="@src" alt="@cate.GroupName" title="@cate.GroupName" />
                                     <p>@cate.GroupName</p>
                                 </a>
                             </div>
@@ -47,14 +47,15 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="nav-pro-title medium grey">
-                    <a href="trang-chu">Trang chủ</a> > <a href="trang-chu" alt="@Model.GroupName" class="current">
-                        <h2>@Model.GroupName</h2>
+                    <a href="trang-chu">Trang chủ</a> >
+                    <a href="trang-chu" alt="@Model.GroupName" class="current">
+                        @Model.GroupName
                     </a>
                 </div>
             </div>
         </div>
-        <div class="row">
-            <div class="col-md-3 col-sm-12 no-padding-right">
+        <div class="row" style="margin:0;">
+            <div class="col-md-3 col-sm-12 no-padding-left">
                 @Html.Partial("_MenuLeft")
                 @*@Html.Partial("_ProviderSubPage")*@
                 @Html.Partial("_BestBuySubPage")
@@ -71,6 +72,8 @@
                                     var lstGroupChild = ProductGroupSvr.GetByParrent(item.ProductGroupID);
                                     int totalRecord = 0;
                                     DataSet ds = ProductSvr.GetSanPhamTheoDieuKien(item.ProductGroupID.ToString(), "ID", "GIAM", 100, 1, ref totalRecord);
+
+                                    var url = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + item.ProductGroupID;
                                     if (ds != null && ds.Tables.Count > 0)
                                     {
                                         DataTable dt = ds.Tables[0];
@@ -78,17 +81,22 @@
                                         {
                                             totalRecord = 0;
                                         }
-                                        <h2 class="title">
-                                            <a href="#">@item.GroupName</a>
-                                        </h2>
+                                        <div class="title">
+                                            <a href="@url">@item.GroupName</a>
+                                        </div>
                                         <div class="row">
                                             <div class="col-md-12 col-sm-12">
                                                 <div class="cattab header-navigation">
                                                     <ul>
                                                         @foreach (var itemCate in lstGroupChild)
                                                         {
+
+                                                            var subUrl = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + itemCate.ProductGroupID;
                                                             string idNhom = item.ProductGroupID.ToString();
-                                                            <li class='dropdown'><a href="#" style="padding: 5px 18px; font-size: 14px; text-transform: capitalize;">@itemCate.GroupName</a></li>
+                                                            <li class='dropdown'>
+                                                                <a href="@subUrl">@itemCate.GroupName</a>
+                                                            </li>
+                                                            <li class='dropdown' style="padding: 5px;">|</li>
                                                         }
                                                     </ul>
                                                 </div>
@@ -182,7 +190,6 @@
         var totalItem = $(id + " div div").length;
         console.log(totalItem);
         var itemWidth = totalWidth / totalItem;
-        debugger;
         $(".cate-top-img div").css({ "width": itemWidth + "px", "float": "left" });
         $(".cate-top-img div img").css("width", itemWidth + "px");
         //var rightHeight = document.getElementById("widget-sanpham").clientHeight;

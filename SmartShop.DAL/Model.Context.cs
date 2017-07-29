@@ -44,7 +44,6 @@ namespace SmartShop.DAL
         public DbSet<MemberGroup> MemberGroups { get; set; }
         public DbSet<Product> Products { get; set; }
         public DbSet<ProductDesign> ProductDesigns { get; set; }
-        public DbSet<ProductGroup> ProductGroups { get; set; }
         public DbSet<ProductMaterial> ProductMaterials { get; set; }
         public DbSet<ProductSet> ProductSets { get; set; }
         public DbSet<ProductSize> ProductSizes { get; set; }
@@ -71,6 +70,7 @@ namespace SmartShop.DAL
         public DbSet<vwProductSetAllName> vwProductSetAllNames { get; set; }
         public DbSet<vwShoppingOrder_Member> vwShoppingOrder_Member { get; set; }
         public DbSet<vwShoppingOrderDetail> vwShoppingOrderDetails { get; set; }
+        public DbSet<ProductGroup> ProductGroups { get; set; }
     
         [EdmFunction("SmartShopEntities", "T_AccessMember_UserName")]
         public virtual IQueryable<T_AccessMember_UserName_Result> T_AccessMember_UserName(string username)

@@ -4,242 +4,18 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="SmartShopModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-        <EntityContainer Name="SmartShopModelStoreContainer">
-          <EntitySet Name="Advertisement" EntityType="SmartShopModel.Store.Advertisement" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Album" EntityType="SmartShopModel.Store.Album" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Artical" EntityType="SmartShopModel.Store.Artical" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ArticalCategory" EntityType="SmartShopModel.Store.ArticalCategory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Category" EntityType="SmartShopModel.Store.Category" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Color" EntityType="SmartShopModel.Store.Color" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Comment" EntityType="SmartShopModel.Store.Comment" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="HT_THONG_TIN" EntityType="SmartShopModel.Store.HT_THONG_TIN" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Image" EntityType="SmartShopModel.Store.Image" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Inventory" EntityType="SmartShopModel.Store.Inventory" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="InventoryDetail" EntityType="SmartShopModel.Store.InventoryDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="InventoryPeriod" EntityType="SmartShopModel.Store.InventoryPeriod" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Member" EntityType="SmartShopModel.Store.Member" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="MemberGroup" EntityType="SmartShopModel.Store.MemberGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Product" EntityType="SmartShopModel.Store.Product" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductDesign" EntityType="SmartShopModel.Store.ProductDesign" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductGroup" EntityType="SmartShopModel.Store.ProductGroup" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductMaterial" EntityType="SmartShopModel.Store.ProductMaterial" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductSet" EntityType="SmartShopModel.Store.ProductSet" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductSize" EntityType="SmartShopModel.Store.ProductSize" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductStyle" EntityType="SmartShopModel.Store.ProductStyle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ProductType" EntityType="SmartShopModel.Store.ProductType" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="Provider" EntityType="SmartShopModel.Store.Provider" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ShoppingOrder" EntityType="SmartShopModel.Store.ShoppingOrder" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="ShoppingOrderDetail" EntityType="SmartShopModel.Store.ShoppingOrderDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SP_SAN_PHAM_TTINH" EntityType="SmartShopModel.Store.SP_SAN_PHAM_TTINH" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SP_TTINH_GTRI" EntityType="SmartShopModel.Store.SP_TTINH_GTRI" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SP_TTINH_LOAI" EntityType="SmartShopModel.Store.SP_TTINH_LOAI" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="StockOrder" EntityType="SmartShopModel.Store.StockOrder" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="StockOrderDetail" EntityType="SmartShopModel.Store.StockOrderDetail" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SYS_MENU" EntityType="SmartShopModel.Store.SYS_MENU" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="SYS_VERSION" EntityType="SmartShopModel.Store.SYS_VERSION" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="sysdiagrams" EntityType="SmartShopModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="WebInfo" EntityType="SmartShopModel.Store.WebInfo" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="vwAdv_Category" EntityType="SmartShopModel.Store.vwAdv_Category" store:Type="Views" store:Schema="dbo" store:Name="vwAdv_Category">
-            <DefiningQuery>SELECT 
-      [vwAdv_Category].[AdvertisementID] AS [AdvertisementID], 
-      [vwAdv_Category].[Title] AS [Title], 
-      [vwAdv_Category].[Image] AS [Image], 
-      [vwAdv_Category].[Description] AS [Description], 
-      [vwAdv_Category].[Orders] AS [Orders], 
-      [vwAdv_Category].[Active] AS [Active], 
-      [vwAdv_Category].[Position] AS [Position], 
-      [vwAdv_Category].[CategoryID] AS [CategoryID], 
-      [vwAdv_Category].[Link] AS [Link]
-      FROM [dbo].[vwAdv_Category] AS [vwAdv_Category]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwArtical" EntityType="SmartShopModel.Store.vwArtical" store:Type="Views" store:Schema="dbo" store:Name="vwArtical">
-            <DefiningQuery>SELECT 
-      [vwArtical].[ArticalID] AS [ArticalID], 
-      [vwArtical].[ArticalCatID] AS [ArticalCatID], 
-      [vwArtical].[Title] AS [Title], 
-      [vwArtical].[ArticalContent] AS [ArticalContent], 
-      [vwArtical].[MasterImage] AS [MasterImage], 
-      [vwArtical].[ResizeImage] AS [ResizeImage], 
-      [vwArtical].[Member] AS [Member], 
-      [vwArtical].[PublishDate] AS [PublishDate], 
-      [vwArtical].[Viewed] AS [Viewed], 
-      [vwArtical].[Tag] AS [Tag], 
-      [vwArtical].[Active] AS [Active], 
-      [vwArtical].[ArticalCatName] AS [ArticalCatName], 
-      [vwArtical].[Summery] AS [Summery], 
-      [vwArtical].[IsFix] AS [IsFix]
-      FROM [dbo].[vwArtical] AS [vwArtical]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwComment" EntityType="SmartShopModel.Store.vwComment" store:Type="Views" store:Schema="dbo" store:Name="vwComment">
-            <DefiningQuery>SELECT 
-      [vwComment].[CommentID] AS [CommentID], 
-      [vwComment].[Parent] AS [Parent], 
-      [vwComment].[Title] AS [Title], 
-      [vwComment].[Content] AS [Content], 
-      [vwComment].[ComentBy] AS [ComentBy], 
-      [vwComment].[Email] AS [Email], 
-      [vwComment].[Date] AS [Date], 
-      [vwComment].[Type] AS [Type], 
-      [vwComment].[ProductSetID] AS [ProductSetID], 
-      [vwComment].[Viewed] AS [Viewed], 
-      [vwComment].[AdminView] AS [AdminView], 
-      [vwComment].[Active] AS [Active], 
-      [vwComment].[ProductSetCode] AS [ProductSetCode], 
-      [vwComment].[ProductSetName] AS [ProductSetName]
-      FROM [dbo].[vwComment] AS [vwComment]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwProduct" EntityType="SmartShopModel.Store.vwProduct" store:Type="Views" store:Schema="dbo" store:Name="vwProduct">
-            <DefiningQuery>SELECT 
-      [vwProduct].[ProductID] AS [ProductID], 
-      [vwProduct].[ProductCode] AS [ProductCode], 
-      [vwProduct].[ProductName] AS [ProductName], 
-      [vwProduct].[ProductSetID] AS [ProductSetID], 
-      [vwProduct].[Quantity] AS [Quantity], 
-      [vwProduct].[SizeID] AS [SizeID], 
-      [vwProduct].[ProductSetName] AS [ProductSetName], 
-      [vwProduct].[Img] AS [Img], 
-      [vwProduct].[SizeName] AS [SizeName], 
-      [vwProduct].[ProductGroupID] AS [ProductGroupID], 
-      [vwProduct].[GroupName] AS [GroupName], 
-      [vwProduct].[Viewed] AS [Viewed], 
-      [vwProduct].[Available] AS [Available]
-      FROM [dbo].[vwProduct] AS [vwProduct]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwProduct_Img" EntityType="SmartShopModel.Store.vwProduct_Img" store:Type="Views" store:Schema="dbo" store:Name="vwProduct_Img">
-            <DefiningQuery>SELECT 
-      [vwProduct_Img].[ProductID] AS [ProductID], 
-      [vwProduct_Img].[ProductCode] AS [ProductCode], 
-      [vwProduct_Img].[ProductName] AS [ProductName], 
-      [vwProduct_Img].[ProductSetID] AS [ProductSetID], 
-      [vwProduct_Img].[Quantity] AS [Quantity], 
-      [vwProduct_Img].[SizeID] AS [SizeID], 
-      [vwProduct_Img].[ResizeImage] AS [ResizeImage], 
-      [vwProduct_Img].[MasterImage] AS [MasterImage]
-      FROM [dbo].[vwProduct_Img] AS [vwProduct_Img]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwProductSet_Product" EntityType="SmartShopModel.Store.vwProductSet_Product" store:Type="Views" store:Schema="dbo" store:Name="vwProductSet_Product">
-            <DefiningQuery>SELECT 
-      [vwProductSet_Product].[ProductSetID] AS [ProductSetID], 
-      [vwProductSet_Product].[ProductSetCode] AS [ProductSetCode], 
-      [vwProductSet_Product].[ProductSetName] AS [ProductSetName], 
-      [vwProductSet_Product].[CategoryID] AS [CategoryID], 
-      [vwProductSet_Product].[ProductGroupID] AS [ProductGroupID], 
-      [vwProductSet_Product].[ProductStyleID] AS [ProductStyleID], 
-      [vwProductSet_Product].[ProductMaterialID] AS [ProductMaterialID], 
-      [vwProductSet_Product].[ProductTypeID] AS [ProductTypeID], 
-      [vwProductSet_Product].[Pocket] AS [Pocket], 
-      [vwProductSet_Product].[ProviderID] AS [ProviderID], 
-      [vwProductSet_Product].[ForGender] AS [ForGender], 
-      [vwProductSet_Product].[Price] AS [Price], 
-      [vwProductSet_Product].[PriceSaled] AS [PriceSaled], 
-      [vwProductSet_Product].[DeliveryDate] AS [DeliveryDate], 
-      [vwProductSet_Product].[Description] AS [Description], 
-      [vwProductSet_Product].[ProductID] AS [ProductID], 
-      [vwProductSet_Product].[Quantity] AS [Quantity], 
-      [vwProductSet_Product].[ProductUnit] AS [ProductUnit], 
-      [vwProductSet_Product].[ProductCode] AS [ProductCode], 
-      [vwProductSet_Product].[ProductName] AS [ProductName], 
-      [vwProductSet_Product].[Img] AS [Img], 
-      [vwProductSet_Product].[ProductDesignID] AS [ProductDesignID], 
-      [vwProductSet_Product].[Viewed] AS [Viewed], 
-      [vwProductSet_Product].[Available] AS [Available]
-      FROM [dbo].[vwProductSet_Product] AS [vwProductSet_Product]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwProductSetAllName" EntityType="SmartShopModel.Store.vwProductSetAllName" store:Type="Views" store:Schema="dbo" store:Name="vwProductSetAllName">
-            <DefiningQuery>SELECT 
-      [vwProductSetAllName].[ProductSetID] AS [ProductSetID], 
-      [vwProductSetAllName].[ProductSetCode] AS [ProductSetCode], 
-      [vwProductSetAllName].[ProductSetName] AS [ProductSetName], 
-      [vwProductSetAllName].[CategoryID] AS [CategoryID], 
-      [vwProductSetAllName].[CategoryName] AS [CategoryName], 
-      [vwProductSetAllName].[ProductGroupName] AS [ProductGroupName], 
-      [vwProductSetAllName].[ProductStyleName] AS [ProductStyleName], 
-      [vwProductSetAllName].[ProductMaterialName] AS [ProductMaterialName], 
-      [vwProductSetAllName].[ProductTypeName] AS [ProductTypeName], 
-      [vwProductSetAllName].[ProviderName] AS [ProviderName], 
-      [vwProductSetAllName].[ForGenderName] AS [ForGenderName], 
-      [vwProductSetAllName].[ProductGroupID] AS [ProductGroupID], 
-      [vwProductSetAllName].[ProductStyleID] AS [ProductStyleID], 
-      [vwProductSetAllName].[ProductMaterialID] AS [ProductMaterialID], 
-      [vwProductSetAllName].[ProductTypeID] AS [ProductTypeID], 
-      [vwProductSetAllName].[Pocket] AS [Pocket], 
-      [vwProductSetAllName].[ProviderID] AS [ProviderID], 
-      [vwProductSetAllName].[ForGender] AS [ForGender], 
-      [vwProductSetAllName].[Price] AS [Price], 
-      [vwProductSetAllName].[PriceSaled] AS [PriceSaled], 
-      [vwProductSetAllName].[Description] AS [Description], 
-      [vwProductSetAllName].[ProductUnit] AS [ProductUnit], 
-      [vwProductSetAllName].[DeliveryDate] AS [DeliveryDate], 
-      [vwProductSetAllName].[Img] AS [Img], 
-      [vwProductSetAllName].[ColorID] AS [ColorID], 
-      [vwProductSetAllName].[ColorName] AS [ColorName], 
-      [vwProductSetAllName].[ProductDesignID] AS [ProductDesignID], 
-      [vwProductSetAllName].[ProductDesignName] AS [ProductDesignName]
-      FROM [dbo].[vwProductSetAllName] AS [vwProductSetAllName]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwShoppingOrder_Member" EntityType="SmartShopModel.Store.vwShoppingOrder_Member" store:Type="Views" store:Schema="dbo" store:Name="vwShoppingOrder_Member">
-            <DefiningQuery>SELECT 
-      [vwShoppingOrder_Member].[MemberID] AS [MemberID], 
-      [vwShoppingOrder_Member].[MemberGroupID] AS [MemberGroupID], 
-      [vwShoppingOrder_Member].[AcountLogin] AS [AcountLogin], 
-      [vwShoppingOrder_Member].[OrderID] AS [OrderID], 
-      [vwShoppingOrder_Member].[OrderCode] AS [OrderCode], 
-      [vwShoppingOrder_Member].[OrderDate] AS [OrderDate], 
-      [vwShoppingOrder_Member].[RequiredDate] AS [RequiredDate], 
-      [vwShoppingOrder_Member].[ShippedDate] AS [ShippedDate], 
-      [vwShoppingOrder_Member].[Total] AS [Total], 
-      [vwShoppingOrder_Member].[ShipAddress] AS [ShipAddress], 
-      [vwShoppingOrder_Member].[ShipCity] AS [ShipCity], 
-      [vwShoppingOrder_Member].[ShipCountry] AS [ShipCountry], 
-      [vwShoppingOrder_Member].[Status] AS [Status], 
-      [vwShoppingOrder_Member].[ManageBy] AS [ManageBy]
-      FROM [dbo].[vwShoppingOrder_Member] AS [vwShoppingOrder_Member]</DefiningQuery>
-          </EntitySet>
-          <EntitySet Name="vwShoppingOrderDetail" EntityType="SmartShopModel.Store.vwShoppingOrderDetail" store:Type="Views" store:Schema="dbo" store:Name="vwShoppingOrderDetail">
-            <DefiningQuery>SELECT 
-      [vwShoppingOrderDetail].[OrderDetailID] AS [OrderDetailID], 
-      [vwShoppingOrderDetail].[OrderID] AS [OrderID], 
-      [vwShoppingOrderDetail].[ProductID] AS [ProductID], 
-      [vwShoppingOrderDetail].[Price] AS [Price], 
-      [vwShoppingOrderDetail].[Amount] AS [Amount], 
-      [vwShoppingOrderDetail].[Discount] AS [Discount], 
-      [vwShoppingOrderDetail].[ProductSetName] AS [ProductSetName], 
-      [vwShoppingOrderDetail].[ChietKhau] AS [ChietKhau]
-      FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
-          </EntitySet>
-          <AssociationSet Name="FK_Image_Album" Association="SmartShopModel.Store.FK_Image_Album">
-            <End Role="Album" EntitySet="Album" />
-            <End Role="Image" EntitySet="Image" />
-          </AssociationSet>
-          <AssociationSet Name="FK_Inventory_InventoryPeriod" Association="SmartShopModel.Store.FK_Inventory_InventoryPeriod">
-            <End Role="InventoryPeriod" EntitySet="InventoryPeriod" />
-            <End Role="Inventory" EntitySet="Inventory" />
-          </AssociationSet>
-          <AssociationSet Name="FK_InventoryDetail_Inventory" Association="SmartShopModel.Store.FK_InventoryDetail_Inventory">
-            <End Role="Inventory" EntitySet="Inventory" />
-            <End Role="InventoryDetail" EntitySet="InventoryDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_ShoppingOrderDetail_ShoppingOrder" Association="SmartShopModel.Store.FK_ShoppingOrderDetail_ShoppingOrder">
-            <End Role="ShoppingOrder" EntitySet="ShoppingOrder" />
-            <End Role="ShoppingOrderDetail" EntitySet="ShoppingOrderDetail" />
-          </AssociationSet>
-          <AssociationSet Name="FK_StockOrderDetail_StockOrder" Association="SmartShopModel.Store.FK_StockOrderDetail_StockOrder">
-            <End Role="StockOrder" EntitySet="StockOrder" />
-            <End Role="StockOrderDetail" EntitySet="StockOrderDetail" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="SmartShopModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Advertisement">
           <Key>
             <PropertyRef Name="AdvertisementID" />
           </Key>
-          <Property Name="AdvertisementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdvertisementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="Image" Type="image" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Orders" Type="int" />
           <Property Name="Active" Type="bit" />
-          <Property Name="Position" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="Link" Type="varchar" MaxLength="150" />
           <Property Name="CategoryID" Type="int" Nullable="false" />
         </EntityType>
@@ -247,7 +23,7 @@
           <Key>
             <PropertyRef Name="AlbumID" />
           </Key>
-          <Property Name="AlbumID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AlbumID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="MasterImage" Type="varchar" MaxLength="255" />
@@ -262,7 +38,7 @@
           <Key>
             <PropertyRef Name="ArticalID" />
           </Key>
-          <Property Name="ArticalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ArticalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ArticalCatID" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="Summery" Type="nvarchar" MaxLength="255" />
@@ -280,7 +56,7 @@
           <Key>
             <PropertyRef Name="ArticalCatID" />
           </Key>
-          <Property Name="ArticalCatID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ArticalCatID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ArticalCatName" Type="nvarchar" MaxLength="255" />
           <Property Name="Order" Type="int" />
           <Property Name="ParentID" Type="int" />
@@ -290,7 +66,7 @@
           <Key>
             <PropertyRef Name="CategoryID" />
           </Key>
-          <Property Name="CategoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CategoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ParrentID" Type="int" />
           <Property Name="CategoryName" Type="nvarchar" MaxLength="255" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
@@ -300,7 +76,7 @@
           <Key>
             <PropertyRef Name="ColorID" />
           </Key>
-          <Property Name="ColorID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ColorID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="varchar" MaxLength="10" />
           <Property Name="ColorName" Type="nvarchar" MaxLength="255" />
           <Property Name="ColorIcon" Type="nvarchar" MaxLength="255" />
@@ -310,7 +86,7 @@
           <Key>
             <PropertyRef Name="CommentID" />
           </Key>
-          <Property Name="CommentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Parent" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="Content" Type="ntext" />
@@ -327,18 +103,18 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GroupInfo" Type="varchar" MaxLength="50" />
           <Property Name="Info" Type="varchar" MaxLength="50" />
-          <Property Name="Value" Type="nvarchar" />
-          <Property Name="Des" Type="nvarchar" />
+          <Property Name="Value" Type="nvarchar" MaxLength="4000" />
+          <Property Name="Des" Type="nvarchar" MaxLength="4000" />
           <Property Name="Available" Type="int" />
         </EntityType>
         <EntityType Name="Image">
           <Key>
             <PropertyRef Name="ImageID" />
           </Key>
-          <Property Name="ImageID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ImageID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="AlbumID" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="MasterImage" Type="varchar" MaxLength="255" />
@@ -354,7 +130,7 @@
           <Key>
             <PropertyRef Name="InventoryID" />
           </Key>
-          <Property Name="InventoryID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InventoryCode" Type="varchar" MaxLength="20" />
           <Property Name="PeriodID" Type="int" Nullable="false" />
           <Property Name="InventoryDate" Type="datetime" />
@@ -370,7 +146,7 @@
           <Key>
             <PropertyRef Name="InventoryDetailID" />
           </Key>
-          <Property Name="InventoryDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InventoryDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="InventoryID" Type="int" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Quantity" Type="float" />
@@ -379,7 +155,7 @@
           <Key>
             <PropertyRef Name="PeriodID" />
           </Key>
-          <Property Name="PeriodID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="PeriodID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="PeriodName" Type="nvarchar" MaxLength="50" />
           <Property Name="BeginDate" Type="datetime" />
           <Property Name="EndDate" Type="datetime" />
@@ -389,7 +165,7 @@
           <Key>
             <PropertyRef Name="MemberID" />
           </Key>
-          <Property Name="MemberID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MemberID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberGroupID" Type="int" Nullable="false" />
           <Property Name="AcountLogin" Type="varchar" MaxLength="255" />
           <Property Name="AcountPass" Type="varchar" MaxLength="255" />
@@ -408,7 +184,7 @@
           <Key>
             <PropertyRef Name="MemberGroupID" />
           </Key>
-          <Property Name="MemberGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="MemberGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GroupName" Type="nvarchar" MaxLength="255" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
         </EntityType>
@@ -416,7 +192,7 @@
           <Key>
             <PropertyRef Name="ProductID" />
           </Key>
-          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductCode" Type="varchar" MaxLength="255" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="255" />
           <Property Name="NoSymbolName" Type="nvarchar" MaxLength="255" />
@@ -431,7 +207,7 @@
           <Key>
             <PropertyRef Name="ProductDesignID" />
           </Key>
-          <Property Name="ProductDesignID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductDesignID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductDesignName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
@@ -440,18 +216,19 @@
           <Key>
             <PropertyRef Name="ProductGroupID" />
           </Key>
-          <Property Name="ProductGroupID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductGroupID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="GroupParrentID" Type="int" />
           <Property Name="GroupName" Type="nvarchar" MaxLength="255" />
           <Property Name="NoSymbolName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
+          <Property Name="Img" Type="varchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ProductMaterial">
           <Key>
             <PropertyRef Name="ProductMaterialID" />
           </Key>
-          <Property Name="ProductMaterialID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductMaterialID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MaterialName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Desciption" Type="nvarchar" MaxLength="255" />
@@ -460,7 +237,7 @@
           <Key>
             <PropertyRef Name="ProductSetID" />
           </Key>
-          <Property Name="ProductSetID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductSetID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductSetCode" Type="varchar" MaxLength="50" />
           <Property Name="ProductSetName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" Nullable="false" />
@@ -484,7 +261,7 @@
           <Key>
             <PropertyRef Name="SizeID" />
           </Key>
-          <Property Name="SizeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="SizeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Code" Type="varchar" MaxLength="10" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
@@ -493,7 +270,7 @@
           <Key>
             <PropertyRef Name="ProductStyleID" />
           </Key>
-          <Property Name="ProductStyleID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductStyleID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StyleName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
@@ -502,7 +279,7 @@
           <Key>
             <PropertyRef Name="ProductTypeID" />
           </Key>
-          <Property Name="ProductTypeID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductTypeID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="TypeName" Type="nvarchar" MaxLength="255" />
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
@@ -511,7 +288,7 @@
           <Key>
             <PropertyRef Name="ProviderID" />
           </Key>
-          <Property Name="ProviderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProviderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProviderName" Type="nvarchar" MaxLength="255" />
           <Property Name="Address" Type="nvarchar" MaxLength="255" />
           <Property Name="Phone" Type="varchar" MaxLength="50" />
@@ -523,7 +300,7 @@
           <Key>
             <PropertyRef Name="OrderID" />
           </Key>
-          <Property Name="OrderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="MemberID" Type="int" />
           <Property Name="OrderCode" Type="varchar" MaxLength="50" />
           <Property Name="OrderDate" Type="datetime" />
@@ -539,7 +316,7 @@
           <Key>
             <PropertyRef Name="OrderDetailID" />
           </Key>
-          <Property Name="OrderDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Price" Type="float" />
@@ -550,35 +327,35 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_SAN_PHAM" Type="int" Nullable="false" />
-          <Property Name="MA_SAN_PHAM" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="MA_TTINH" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="MA_SAN_PHAM" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MA_TTINH" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="GIA_TRI" Type="nvarchar(max)" />
         </EntityType>
         <EntityType Name="SP_TTINH_GTRI">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ID_TTINH_LOAI" Type="int" Nullable="false" />
-          <Property Name="MA_TTINH_LOAI" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="MA_TTINH" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="TEN_TTINH" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="MA_TTINH_LOAI" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="MA_TTINH" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TEN_TTINH" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="SP_TTINH_LOAI">
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="MA_TTINH_LOAI" Type="varchar" Nullable="false" MaxLength="30" />
-          <Property Name="TEN_TTINH_LOAI" Type="nvarchar" Nullable="false" MaxLength="255" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="MA_TTINH_LOAI" Type="varchar" MaxLength="30" Nullable="false" />
+          <Property Name="TEN_TTINH_LOAI" Type="nvarchar" MaxLength="255" Nullable="false" />
         </EntityType>
         <EntityType Name="StockOrder">
           <Key>
             <PropertyRef Name="StockOrderID" />
           </Key>
-          <Property Name="StockOrderID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StockOrderID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StockOrderCode" Type="varchar" MaxLength="20" />
           <Property Name="StockOrderType" Type="int" />
           <Property Name="EffectType" Type="bit" Nullable="false" />
@@ -599,7 +376,7 @@
           <Key>
             <PropertyRef Name="StockOrderDetailID" />
           </Key>
-          <Property Name="StockOrderDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="StockOrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="StockOrderID" Type="int" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Quantity" Type="float" />
@@ -609,12 +386,12 @@
           <Key>
             <PropertyRef Name="MENU_ID" />
           </Key>
-          <Property Name="MENU_ID" Type="varchar" Nullable="false" MaxLength="30" />
+          <Property Name="MENU_ID" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="MENU_NAME" Type="nvarchar" MaxLength="255" />
           <Property Name="MENU_NAME_EN" Type="nvarchar" MaxLength="255" />
           <Property Name="MENU_TYPE" Type="varchar" MaxLength="6" />
           <Property Name="DISPLAY_SEQ" Type="int" Nullable="false" />
-          <Property Name="ICON_SEQ" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="ICON_SEQ" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CONTROLER_NAME" Type="varchar" MaxLength="255" />
           <Property Name="ACTION_NAME" Type="varchar" MaxLength="255" />
           <Property Name="PARAMETER_NAMES" Type="varchar" MaxLength="255" />
@@ -630,7 +407,7 @@
           <Key>
             <PropertyRef Name="ID" />
           </Key>
-          <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="LOAI" Type="varchar" MaxLength="50" />
           <Property Name="PHIEN_BAN" Type="varchar" MaxLength="50" />
           <Property Name="MO_TA" Type="nvarchar" MaxLength="255" />
@@ -639,9 +416,9 @@
           <Key>
             <PropertyRef Name="diagram_id" />
           </Key>
-          <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
           <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="version" Type="int" />
           <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
@@ -649,7 +426,7 @@
           <Key>
             <PropertyRef Name="InforID" />
           </Key>
-          <Property Name="InforID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="InforID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NameLiveChat1" Type="nvarchar" MaxLength="100" />
           <Property Name="YahooLiveChat1" Type="varchar" MaxLength="100" />
           <Property Name="PhoneLiveChat1" Type="varchar" MaxLength="50" />
@@ -689,27 +466,25 @@
           <Property Name="YouTubeLink" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwAdv_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwAdv_Category' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwAdv_Category">
           <Key>
             <PropertyRef Name="AdvertisementID" />
             <PropertyRef Name="Position" />
             <PropertyRef Name="CategoryID" />
           </Key>
-          <Property Name="AdvertisementID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="AdvertisementID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="Image" Type="image" />
           <Property Name="Description" Type="nvarchar" MaxLength="500" />
           <Property Name="Orders" Type="int" />
           <Property Name="Active" Type="bit" />
-          <Property Name="Position" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="Position" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="CategoryID" Type="int" Nullable="false" />
           <Property Name="Link" Type="varchar" MaxLength="150" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwArtical' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwArtical' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwArtical">
           <Key>
             <PropertyRef Name="ArticalID" />
@@ -717,7 +492,7 @@
             <PropertyRef Name="Viewed" />
             <PropertyRef Name="Active" />
           </Key>
-          <Property Name="ArticalID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ArticalID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ArticalCatID" Type="int" Nullable="false" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="ArticalContent" Type="ntext" />
@@ -733,14 +508,13 @@
           <Property Name="IsFix" Type="bit" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwComment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwComment' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwComment">
           <Key>
             <PropertyRef Name="CommentID" />
             <PropertyRef Name="Active" />
           </Key>
-          <Property Name="CommentID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="CommentID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Parent" Type="int" />
           <Property Name="Title" Type="nvarchar" MaxLength="255" />
           <Property Name="Content" Type="ntext" />
@@ -756,14 +530,13 @@
           <Property Name="ProductSetName" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwProduct' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwProduct">
           <Key>
             <PropertyRef Name="ProductID" />
             <PropertyRef Name="Viewed" />
           </Key>
-          <Property Name="ProductID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="ProductID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="ProductCode" Type="varchar" MaxLength="255" />
           <Property Name="ProductName" Type="nvarchar" MaxLength="255" />
           <Property Name="ProductSetID" Type="int" />
@@ -778,8 +551,7 @@
           <Property Name="Available" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwProduct_Img' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwProduct_Img' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwProduct_Img">
           <Key>
             <PropertyRef Name="ProductID" />
@@ -794,8 +566,7 @@
           <Property Name="MasterImage" Type="varchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwProductSet_Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwProductSet_Product' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwProductSet_Product">
           <Key>
             <PropertyRef Name="ProductSetID" />
@@ -831,8 +602,7 @@
           <Property Name="Available" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwProductSetAllName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwProductSetAllName' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwProductSetAllName">
           <Key>
             <PropertyRef Name="ProductSetID" />
@@ -870,8 +640,7 @@
           <Property Name="ProductDesignName" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwShoppingOrder_Member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwShoppingOrder_Member' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwShoppingOrder_Member">
           <Key>
             <PropertyRef Name="MemberID" />
@@ -894,13 +663,12 @@
           <Property Name="ManageBy" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
-      warning 6002: The table/view 'SmartShop.dbo.vwShoppingOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.
-      -->
+warning 6002: The table/view 'SmartShop.dbo.vwShoppingOrderDetail' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
         <EntityType Name="vwShoppingOrderDetail">
           <Key>
             <PropertyRef Name="OrderDetailID" />
           </Key>
-          <Property Name="OrderDetailID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="OrderDetailID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="OrderID" Type="int" />
           <Property Name="ProductID" Type="int" />
           <Property Name="Price" Type="float" />
@@ -910,8 +678,8 @@
           <Property Name="ChietKhau" Type="float" />
         </EntityType>
         <Association Name="FK_Image_Album">
-          <End Role="Album" Type="SmartShopModel.Store.Album" Multiplicity="0..1" />
-          <End Role="Image" Type="SmartShopModel.Store.Image" Multiplicity="*" />
+          <End Role="Album" Type="Self.Album" Multiplicity="0..1" />
+          <End Role="Image" Type="Self.Image" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Album">
               <PropertyRef Name="AlbumID" />
@@ -922,8 +690,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_Inventory_InventoryPeriod">
-          <End Role="InventoryPeriod" Type="SmartShopModel.Store.InventoryPeriod" Multiplicity="1" />
-          <End Role="Inventory" Type="SmartShopModel.Store.Inventory" Multiplicity="*" />
+          <End Role="InventoryPeriod" Type="Self.InventoryPeriod" Multiplicity="1" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="InventoryPeriod">
               <PropertyRef Name="PeriodID" />
@@ -934,8 +702,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_InventoryDetail_Inventory">
-          <End Role="Inventory" Type="SmartShopModel.Store.Inventory" Multiplicity="0..1" />
-          <End Role="InventoryDetail" Type="SmartShopModel.Store.InventoryDetail" Multiplicity="*" />
+          <End Role="Inventory" Type="Self.Inventory" Multiplicity="0..1" />
+          <End Role="InventoryDetail" Type="Self.InventoryDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="Inventory">
               <PropertyRef Name="InventoryID" />
@@ -946,8 +714,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_ShoppingOrderDetail_ShoppingOrder">
-          <End Role="ShoppingOrder" Type="SmartShopModel.Store.ShoppingOrder" Multiplicity="0..1" />
-          <End Role="ShoppingOrderDetail" Type="SmartShopModel.Store.ShoppingOrderDetail" Multiplicity="*" />
+          <End Role="ShoppingOrder" Type="Self.ShoppingOrder" Multiplicity="0..1" />
+          <End Role="ShoppingOrderDetail" Type="Self.ShoppingOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="ShoppingOrder">
               <PropertyRef Name="OrderID" />
@@ -958,8 +726,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_StockOrderDetail_StockOrder">
-          <End Role="StockOrder" Type="SmartShopModel.Store.StockOrder" Multiplicity="0..1" />
-          <End Role="StockOrderDetail" Type="SmartShopModel.Store.StockOrderDetail" Multiplicity="*" />
+          <End Role="StockOrder" Type="Self.StockOrder" Multiplicity="0..1" />
+          <End Role="StockOrderDetail" Type="Self.StockOrderDetail" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="StockOrder">
               <PropertyRef Name="StockOrderID" />
@@ -969,47 +737,47 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Function Name="fn_AccessMember_UserName" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_AccessMember_UserName" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="username" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="fn_CategoryName_CategoryID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_CategoryName_CategoryID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="CategoryID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_diagramobjects" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
-        <Function Name="fn_ForGender_ProductSetID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+        <Function Name="fn_ForGender_ProductSetID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductSetID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_Member_MemberGroupID" ReturnType="int" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_Member_MemberGroupID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
           <Parameter Name="username" Type="nvarchar" Mode="In" />
         </Function>
-        <Function Name="fn_MemberName_ManagerBy" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_MemberName_ManagerBy" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="managerBy" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_Price_ProductID" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_Price_ProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
           <Parameter Name="ProductID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_PriceSaled_ProductID" ReturnType="float" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_PriceSaled_ProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="float">
           <Parameter Name="ProductID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductGroupName_ProductGroupID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductGroupName_ProductGroupID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductGroupID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductMaterialName_ProductMaterialID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductMaterialName_ProductMaterialID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductMaterialID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductSetCode_ProductID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductSetCode_ProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductSetName_ProductID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductSetName_ProductID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductStyleName_ProductStyleID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductStyleName_ProductStyleID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductStyleID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProductTypeName_ProductTypeID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProductTypeName_ProductTypeID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProductTypeID" Type="int" Mode="In" />
         </Function>
-        <Function Name="fn_ProviderName_ProviderID" ReturnType="nvarchar" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+        <Function Name="fn_ProviderName_ProviderID" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="nvarchar">
           <Parameter Name="ProviderID" Type="int" Mode="In" />
         </Function>
         <Function Name="P_Comment_SearchPaging" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
@@ -1309,6 +1077,230 @@
             </CollectionType>
           </ReturnType>
         </Function>
+        <EntityContainer Name="SmartShopModelStoreContainer">
+          <EntitySet Name="Advertisement" EntityType="Self.Advertisement" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Album" EntityType="Self.Album" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Artical" EntityType="Self.Artical" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ArticalCategory" EntityType="Self.ArticalCategory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Category" EntityType="Self.Category" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Color" EntityType="Self.Color" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Comment" EntityType="Self.Comment" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="HT_THONG_TIN" EntityType="Self.HT_THONG_TIN" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Image" EntityType="Self.Image" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inventory" EntityType="Self.Inventory" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryDetail" EntityType="Self.InventoryDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InventoryPeriod" EntityType="Self.InventoryPeriod" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Member" EntityType="Self.Member" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="MemberGroup" EntityType="Self.MemberGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Product" EntityType="Self.Product" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductDesign" EntityType="Self.ProductDesign" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductGroup" EntityType="Self.ProductGroup" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductMaterial" EntityType="Self.ProductMaterial" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSet" EntityType="Self.ProductSet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductSize" EntityType="Self.ProductSize" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductStyle" EntityType="Self.ProductStyle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ProductType" EntityType="Self.ProductType" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Provider" EntityType="Self.Provider" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingOrder" EntityType="Self.ShoppingOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="ShoppingOrderDetail" EntityType="Self.ShoppingOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SP_SAN_PHAM_TTINH" EntityType="Self.SP_SAN_PHAM_TTINH" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SP_TTINH_GTRI" EntityType="Self.SP_TTINH_GTRI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SP_TTINH_LOAI" EntityType="Self.SP_TTINH_LOAI" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StockOrder" EntityType="Self.StockOrder" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="StockOrderDetail" EntityType="Self.StockOrderDetail" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_MENU" EntityType="Self.SYS_MENU" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="SYS_VERSION" EntityType="Self.SYS_VERSION" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="WebInfo" EntityType="Self.WebInfo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="vwAdv_Category" EntityType="Self.vwAdv_Category" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwAdv_Category].[AdvertisementID] AS [AdvertisementID], 
+[vwAdv_Category].[Title] AS [Title], 
+[vwAdv_Category].[Image] AS [Image], 
+[vwAdv_Category].[Description] AS [Description], 
+[vwAdv_Category].[Orders] AS [Orders], 
+[vwAdv_Category].[Active] AS [Active], 
+[vwAdv_Category].[Position] AS [Position], 
+[vwAdv_Category].[CategoryID] AS [CategoryID], 
+[vwAdv_Category].[Link] AS [Link]
+FROM [dbo].[vwAdv_Category] AS [vwAdv_Category]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwArtical" EntityType="Self.vwArtical" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwArtical].[ArticalID] AS [ArticalID], 
+[vwArtical].[ArticalCatID] AS [ArticalCatID], 
+[vwArtical].[Title] AS [Title], 
+[vwArtical].[ArticalContent] AS [ArticalContent], 
+[vwArtical].[MasterImage] AS [MasterImage], 
+[vwArtical].[ResizeImage] AS [ResizeImage], 
+[vwArtical].[Member] AS [Member], 
+[vwArtical].[PublishDate] AS [PublishDate], 
+[vwArtical].[Viewed] AS [Viewed], 
+[vwArtical].[Tag] AS [Tag], 
+[vwArtical].[Active] AS [Active], 
+[vwArtical].[ArticalCatName] AS [ArticalCatName], 
+[vwArtical].[Summery] AS [Summery], 
+[vwArtical].[IsFix] AS [IsFix]
+FROM [dbo].[vwArtical] AS [vwArtical]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwComment" EntityType="Self.vwComment" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwComment].[CommentID] AS [CommentID], 
+[vwComment].[Parent] AS [Parent], 
+[vwComment].[Title] AS [Title], 
+[vwComment].[Content] AS [Content], 
+[vwComment].[ComentBy] AS [ComentBy], 
+[vwComment].[Email] AS [Email], 
+[vwComment].[Date] AS [Date], 
+[vwComment].[Type] AS [Type], 
+[vwComment].[ProductSetID] AS [ProductSetID], 
+[vwComment].[Viewed] AS [Viewed], 
+[vwComment].[AdminView] AS [AdminView], 
+[vwComment].[Active] AS [Active], 
+[vwComment].[ProductSetCode] AS [ProductSetCode], 
+[vwComment].[ProductSetName] AS [ProductSetName]
+FROM [dbo].[vwComment] AS [vwComment]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwProduct" EntityType="Self.vwProduct" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwProduct].[ProductID] AS [ProductID], 
+[vwProduct].[ProductCode] AS [ProductCode], 
+[vwProduct].[ProductName] AS [ProductName], 
+[vwProduct].[ProductSetID] AS [ProductSetID], 
+[vwProduct].[Quantity] AS [Quantity], 
+[vwProduct].[SizeID] AS [SizeID], 
+[vwProduct].[ProductSetName] AS [ProductSetName], 
+[vwProduct].[Img] AS [Img], 
+[vwProduct].[SizeName] AS [SizeName], 
+[vwProduct].[ProductGroupID] AS [ProductGroupID], 
+[vwProduct].[GroupName] AS [GroupName], 
+[vwProduct].[Viewed] AS [Viewed], 
+[vwProduct].[Available] AS [Available]
+FROM [dbo].[vwProduct] AS [vwProduct]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwProduct_Img" EntityType="Self.vwProduct_Img" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwProduct_Img].[ProductID] AS [ProductID], 
+[vwProduct_Img].[ProductCode] AS [ProductCode], 
+[vwProduct_Img].[ProductName] AS [ProductName], 
+[vwProduct_Img].[ProductSetID] AS [ProductSetID], 
+[vwProduct_Img].[Quantity] AS [Quantity], 
+[vwProduct_Img].[SizeID] AS [SizeID], 
+[vwProduct_Img].[ResizeImage] AS [ResizeImage], 
+[vwProduct_Img].[MasterImage] AS [MasterImage]
+FROM [dbo].[vwProduct_Img] AS [vwProduct_Img]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwProductSet_Product" EntityType="Self.vwProductSet_Product" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwProductSet_Product].[ProductSetID] AS [ProductSetID], 
+[vwProductSet_Product].[ProductSetCode] AS [ProductSetCode], 
+[vwProductSet_Product].[ProductSetName] AS [ProductSetName], 
+[vwProductSet_Product].[CategoryID] AS [CategoryID], 
+[vwProductSet_Product].[ProductGroupID] AS [ProductGroupID], 
+[vwProductSet_Product].[ProductStyleID] AS [ProductStyleID], 
+[vwProductSet_Product].[ProductMaterialID] AS [ProductMaterialID], 
+[vwProductSet_Product].[ProductTypeID] AS [ProductTypeID], 
+[vwProductSet_Product].[Pocket] AS [Pocket], 
+[vwProductSet_Product].[ProviderID] AS [ProviderID], 
+[vwProductSet_Product].[ForGender] AS [ForGender], 
+[vwProductSet_Product].[Price] AS [Price], 
+[vwProductSet_Product].[PriceSaled] AS [PriceSaled], 
+[vwProductSet_Product].[DeliveryDate] AS [DeliveryDate], 
+[vwProductSet_Product].[Description] AS [Description], 
+[vwProductSet_Product].[ProductID] AS [ProductID], 
+[vwProductSet_Product].[Quantity] AS [Quantity], 
+[vwProductSet_Product].[ProductUnit] AS [ProductUnit], 
+[vwProductSet_Product].[ProductCode] AS [ProductCode], 
+[vwProductSet_Product].[ProductName] AS [ProductName], 
+[vwProductSet_Product].[Img] AS [Img], 
+[vwProductSet_Product].[ProductDesignID] AS [ProductDesignID], 
+[vwProductSet_Product].[Viewed] AS [Viewed], 
+[vwProductSet_Product].[Available] AS [Available]
+FROM [dbo].[vwProductSet_Product] AS [vwProductSet_Product]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwProductSetAllName" EntityType="Self.vwProductSetAllName" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwProductSetAllName].[ProductSetID] AS [ProductSetID], 
+[vwProductSetAllName].[ProductSetCode] AS [ProductSetCode], 
+[vwProductSetAllName].[ProductSetName] AS [ProductSetName], 
+[vwProductSetAllName].[CategoryID] AS [CategoryID], 
+[vwProductSetAllName].[CategoryName] AS [CategoryName], 
+[vwProductSetAllName].[ProductGroupName] AS [ProductGroupName], 
+[vwProductSetAllName].[ProductStyleName] AS [ProductStyleName], 
+[vwProductSetAllName].[ProductMaterialName] AS [ProductMaterialName], 
+[vwProductSetAllName].[ProductTypeName] AS [ProductTypeName], 
+[vwProductSetAllName].[ProviderName] AS [ProviderName], 
+[vwProductSetAllName].[ForGenderName] AS [ForGenderName], 
+[vwProductSetAllName].[ProductGroupID] AS [ProductGroupID], 
+[vwProductSetAllName].[ProductStyleID] AS [ProductStyleID], 
+[vwProductSetAllName].[ProductMaterialID] AS [ProductMaterialID], 
+[vwProductSetAllName].[ProductTypeID] AS [ProductTypeID], 
+[vwProductSetAllName].[Pocket] AS [Pocket], 
+[vwProductSetAllName].[ProviderID] AS [ProviderID], 
+[vwProductSetAllName].[ForGender] AS [ForGender], 
+[vwProductSetAllName].[Price] AS [Price], 
+[vwProductSetAllName].[PriceSaled] AS [PriceSaled], 
+[vwProductSetAllName].[Description] AS [Description], 
+[vwProductSetAllName].[ProductUnit] AS [ProductUnit], 
+[vwProductSetAllName].[DeliveryDate] AS [DeliveryDate], 
+[vwProductSetAllName].[Img] AS [Img], 
+[vwProductSetAllName].[ColorID] AS [ColorID], 
+[vwProductSetAllName].[ColorName] AS [ColorName], 
+[vwProductSetAllName].[ProductDesignID] AS [ProductDesignID], 
+[vwProductSetAllName].[ProductDesignName] AS [ProductDesignName]
+FROM [dbo].[vwProductSetAllName] AS [vwProductSetAllName]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwShoppingOrder_Member" EntityType="Self.vwShoppingOrder_Member" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwShoppingOrder_Member].[MemberID] AS [MemberID], 
+[vwShoppingOrder_Member].[MemberGroupID] AS [MemberGroupID], 
+[vwShoppingOrder_Member].[AcountLogin] AS [AcountLogin], 
+[vwShoppingOrder_Member].[OrderID] AS [OrderID], 
+[vwShoppingOrder_Member].[OrderCode] AS [OrderCode], 
+[vwShoppingOrder_Member].[OrderDate] AS [OrderDate], 
+[vwShoppingOrder_Member].[RequiredDate] AS [RequiredDate], 
+[vwShoppingOrder_Member].[ShippedDate] AS [ShippedDate], 
+[vwShoppingOrder_Member].[Total] AS [Total], 
+[vwShoppingOrder_Member].[ShipAddress] AS [ShipAddress], 
+[vwShoppingOrder_Member].[ShipCity] AS [ShipCity], 
+[vwShoppingOrder_Member].[ShipCountry] AS [ShipCountry], 
+[vwShoppingOrder_Member].[Status] AS [Status], 
+[vwShoppingOrder_Member].[ManageBy] AS [ManageBy]
+FROM [dbo].[vwShoppingOrder_Member] AS [vwShoppingOrder_Member]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="vwShoppingOrderDetail" EntityType="Self.vwShoppingOrderDetail" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+[vwShoppingOrderDetail].[OrderDetailID] AS [OrderDetailID], 
+[vwShoppingOrderDetail].[OrderID] AS [OrderID], 
+[vwShoppingOrderDetail].[ProductID] AS [ProductID], 
+[vwShoppingOrderDetail].[Price] AS [Price], 
+[vwShoppingOrderDetail].[Amount] AS [Amount], 
+[vwShoppingOrderDetail].[Discount] AS [Discount], 
+[vwShoppingOrderDetail].[ProductSetName] AS [ProductSetName], 
+[vwShoppingOrderDetail].[ChietKhau] AS [ChietKhau]
+FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
+          </EntitySet>
+          <AssociationSet Name="FK_Image_Album" Association="Self.FK_Image_Album">
+            <End Role="Album" EntitySet="Album" />
+            <End Role="Image" EntitySet="Image" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inventory_InventoryPeriod" Association="Self.FK_Inventory_InventoryPeriod">
+            <End Role="InventoryPeriod" EntitySet="InventoryPeriod" />
+            <End Role="Inventory" EntitySet="Inventory" />
+          </AssociationSet>
+          <AssociationSet Name="FK_InventoryDetail_Inventory" Association="Self.FK_InventoryDetail_Inventory">
+            <End Role="Inventory" EntitySet="Inventory" />
+            <End Role="InventoryDetail" EntitySet="InventoryDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_ShoppingOrderDetail_ShoppingOrder" Association="Self.FK_ShoppingOrderDetail_ShoppingOrder">
+            <End Role="ShoppingOrder" EntitySet="ShoppingOrder" />
+            <End Role="ShoppingOrderDetail" EntitySet="ShoppingOrderDetail" />
+          </AssociationSet>
+          <AssociationSet Name="FK_StockOrderDetail_StockOrder" Association="Self.FK_StockOrderDetail_StockOrder">
+            <End Role="StockOrder" EntitySet="StockOrder" />
+            <End Role="StockOrderDetail" EntitySet="StockOrderDetail" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -1330,7 +1322,6 @@
           <EntitySet Name="MemberGroups" EntityType="SmartShopModel.MemberGroup" />
           <EntitySet Name="Products" EntityType="SmartShopModel.Product" />
           <EntitySet Name="ProductDesigns" EntityType="SmartShopModel.ProductDesign" />
-          <EntitySet Name="ProductGroups" EntityType="SmartShopModel.ProductGroup" />
           <EntitySet Name="ProductMaterials" EntityType="SmartShopModel.ProductMaterial" />
           <EntitySet Name="ProductSets" EntityType="SmartShopModel.ProductSet" />
           <EntitySet Name="ProductSizes" EntityType="SmartShopModel.ProductSize" />
@@ -1634,6 +1625,7 @@
             <Parameter Name="CurrentPage" Mode="In" Type="Int32" />
             <Parameter Name="TotalRecord" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="ProductGroups" EntityType="SmartShopModel.ProductGroup" />
         </EntityContainer>
         <ComplexType Name="T_AccessMember_UserName_Result">
           <Property Name="MemberID" Type="Int32" Nullable="false" />
@@ -1877,17 +1869,6 @@
           </Key>
           <Property Name="ProductDesignID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
           <Property Name="ProductDesignName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="CategoryID" Type="Int32" />
-          <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="ProductGroup">
-          <Key>
-            <PropertyRef Name="ProductGroupID" />
-          </Key>
-          <Property Name="ProductGroupID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="GroupParrentID" Type="Int32" />
-          <Property Name="GroupName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="NoSymbolName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="CategoryID" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
         </EntityType>
@@ -2788,6 +2769,18 @@
           <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
           <Property Type="Int64" Name="RowNumber" Nullable="true" />
         </ComplexType>
+        <EntityType Name="ProductGroup">
+          <Key>
+            <PropertyRef Name="ProductGroupID" />
+          </Key>
+          <Property Name="ProductGroupID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GroupParrentID" Type="Int32" />
+          <Property Name="GroupName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoSymbolName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="CategoryID" Type="Int32" />
+          <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -3012,18 +3005,6 @@
               <MappingFragment StoreEntitySet="ProductDesign">
                 <ScalarProperty Name="ProductDesignID" ColumnName="ProductDesignID" />
                 <ScalarProperty Name="ProductDesignName" ColumnName="ProductDesignName" />
-                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
-                <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="ProductGroups">
-            <EntityTypeMapping TypeName="SmartShopModel.ProductGroup">
-              <MappingFragment StoreEntitySet="ProductGroup">
-                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
-                <ScalarProperty Name="GroupParrentID" ColumnName="GroupParrentID" />
-                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
-                <ScalarProperty Name="NoSymbolName" ColumnName="NoSymbolName" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
               </MappingFragment>
@@ -3697,6 +3678,19 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="ProductGroups">
+            <EntityTypeMapping TypeName="SmartShopModel.ProductGroup">
+              <MappingFragment StoreEntitySet="ProductGroup">
+                <ScalarProperty Name="Img" ColumnName="Img" />
+                <ScalarProperty Name="Description" ColumnName="Description" />
+                <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />
+                <ScalarProperty Name="NoSymbolName" ColumnName="NoSymbolName" />
+                <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+                <ScalarProperty Name="GroupParrentID" ColumnName="GroupParrentID" />
+                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
         </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
@@ -3714,6 +3708,7 @@
         <DesignerProperty Name="EnablePluralization" Value="True" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

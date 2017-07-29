@@ -1,0 +1,82 @@
+﻿@using SmartShop.UI
+@using System.Data
+@model NhomChiTietPhanTrangModel
+
+@{
+    if (Model.ListRow != null && Model.ListRow.Count > 0)
+    {
+        int totalPages = Model.ListRow.Count / Model.PageSize;
+        if (Model.ListRow.Count % Model.PageSize > 0)
+        {
+            totalPages += 1;
+        }
+        if (Model.CurrentPage > totalPages)
+        {
+            Model.CurrentPage = 1;
+        }
+        int start = Model.CurrentPage * Model.PageSize - Model.PageSize;
+    <div class="viewproduct4in1">
+        @for (int i = start; i < start + Model.PageSize; i += 4)
+        {
+            <ul>
+                @for (int j = i; j < i + 4 && j < Model.ListRow.Count; j++)
+                {
+                    var gr = ProductGroupSvr.GetByID(Convert.ToInt32(Model.ListRow[j]["NHOM"]));
+                    var cat = ProductCatSvr.GetById(gr.CategoryID.Value);
+                    string path = HeThong.duongdan_anhSP(Convert.ToInt32(Model.ListRow[j]["ID"]), Model.ListRow[j]["YTE_ANH_CHINH"].ToString());
+                    string myWriter = HeThong.StripHTML(Model.ListRow[j]["YTE_SO_TA"].ToString());
+                    <li>
+                        <div class="products product_item tooltip" id="@Model.ListRow[j]["ID"].ToString()">
+                            <div class="inner-product-home">
+                                <a onclick="javascript:ClientAddToListLastItems('vn','@Model.ListRow[j]["ID"].ToString()');" href="@AppEnv.ApplicationPath">
+                                    <img class="img-product" src="@path" alt="@Model.ListRow[j]["TEN"].ToString()" title="@Model.ListRow[j]["TEN"].ToString()"></a>
+                                <div class="ico_spmoi_small" align="center"></div>
+                            </div>
+                            <div class="infor-text-pro">
+                                <a class="name-pro" onclick="javascript:ClientAddToListLastItems('vn','@Model.ListRow[j]["ID"].ToString()');" href="@AppEnv.ApplicationPath">
+                                    <span>
+                                        <h1>@Model.ListRow[j]["TEN"].ToString()</h1>
+                                    </span>
+                                </a>
+                                <div class="pricesale ls">@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(Model.ListRow[j]["YTE_GIA_BAN"].ToString()))</div>
+                            </div>
+                        </div>
+                        <div id="data_@Model.ListRow[j]["ID"].ToString()" style="display: none;">
+                            <div class="protip-title">@Model.ListRow[j]["TEN"].ToString() - <span>@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(Model.ListRow[j]["YTE_GIA_BAN"].ToString()))</span></div>
+                            <div class="protip-content">
+                                <div class="protip-summary">
+                                    <strong>Thông tin sản phẩm:</strong><p>
+                                        <span style="text-align: justify;">@myWriter</span>
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                }
+            </ul>
+        }
+    </div>
+    <div class="zonespace">
+    </div>
+    <div class="cssCountProduct">
+        Hiện có @Model.ListRow.Count sản phẩm được tìm thấy
+    </div>
+    <div id="csspagenavigate">
+        <div class="clrfix">
+        </div>
+        <div id="cssPaging">
+            @for (int i = 1; i <= totalPages; i++)
+            {
+                if (i == Model.CurrentPage)
+                {
+                <a href="javascript:void(0)" style="font-size: 16px; color: red; background-color: #105CAA; padding: 0 5px; margin-right: 5px;">@i</a>
+                }
+                else
+                {
+                <a href="javascript:void(0)" style="font-size: 16px; color: white; background-color: #105CAA; padding: 0 5px; margin-right: 5px;" onclick="HtmlPager(@i);">@i</a>
+                }
+            }
+        </div>
+    </div>
+    }
+}

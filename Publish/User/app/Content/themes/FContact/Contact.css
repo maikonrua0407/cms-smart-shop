@@ -1,0 +1,123 @@
+﻿#rfq
+{
+	width: 222px;
+	float: left;
+	font-size: 12px;
+	font-weight: normal;
+	line-height: normal;
+	padding-left: 10px;
+	margin-top: 10px;
+}
+#rfq h1 {
+padding : 5px 0 5px 67px;
+margin : 0;
+font-size: 20px;
+font-weight : bold;
+line-height : 27px;
+text-transform : uppercase;
+background-image : url(../../imgs/global/icon_rfq.gif);
+background-position : left 0;
+background-repeat : no-repeat;
+}
+#rfq h1 span {
+font-size: 16px;
+color : #008DEE;
+font-weight : normal;
+line-height : 19px;
+text-transform : uppercase;
+}
+.red_text {
+color : #d80101;
+} 
+input.look  
+{
+width:250px;
+border: 1px solid #bce2f4;
+font-family : verdana,arial, tahoma,  helvetica, sans-serif;
+font-size : 11px;
+color : #000000;
+font-weight : normal;
+background-color : #f3fafd;
+padding-left : 2px;
+padding-right : 2px;
+}
+textarea.look 
+{
+width:450px;
+border : 1px solid #bce2f4;
+font-family : verdana,arial, tahoma,  helvetica, sans-serif;
+font-size : 11px;
+color : #000000;
+padding-right : 3px;
+padding-left : 3px;
+font-weight : normal;
+padding-bottom : 1px;
+padding-top : 1px;
+background-color : #f3fafd;
+}
+select.look {
+border : 1px solid #bce2f4;
+font-family : verdana,arial, tahoma,  helvetica, sans-serif;
+font-size : 11px;
+color : #000000;
+background-color : #f3fafd;
+}
+submit.look {
+border : 1px solid #bce2f4;
+font-family : verdana,arial, tahoma,  helvetica, sans-serif;
+font-size : 11px;
+color : #000000;
+padding-right : 3px;
+padding-left : 2px;
+font-weight : normal;
+font-size : 12px;
+padding-bottom : 1px;
+padding-top : 1px;
+}
+
+.cssImageIcon
+{
+	border: 0;
+	float: right;
+	padding-right: 80px;
+	padding-top: 10px;
+}
+.cssImageSubmit
+{
+	border:0;
+}
+.info_company
+{
+	color: #543819;
+}
+
+
+.bottom_box_wrapper {
+	clear: both;	
+	float: left;
+	position: relative;
+	margin: 35px 0 0 0;
+	padding: 0;
+	border: solid 1px #f9f9f9;
+	background:#fff;
+	-webkit-box-shadow: 0px 10px 10px -10px #C0C0C0;
+	box-shadow: 0px 10px 10px -10px #C0C0C0;	
+	-webkit-border-radius: 0 0 5px 5px;
+	border-radius: 0 0 5px 5px;		
+    behavior: url('../../../../../vinainfotech.com/Portal/stylesheet/PIE.htc');
+    position:relative;			
+}
+.bottom_button {
+	position: absolute;
+	width: 220px;
+	height: 39px;
+	left: 22px;
+	top: -19px;
+}
+.bottom_box_content {
+	color: black;
+	line-height: 20px;
+	font-weight: normal;
+	padding: 50px 25px 30px 25px;
+	text-align: left;
+}

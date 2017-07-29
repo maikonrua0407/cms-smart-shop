@@ -1,0 +1,30 @@
+﻿@using Kendo.Mvc.UI
+@model List<SmartShop.DAL.SYS_MENU>
+
+@{
+    ViewBag.Title = "Danh sách chức năng";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@(Html.Kendo().Grid(Model)
+    .Name("Grid")
+    .Columns(columns =>
+    {
+        columns.Bound(p => p.MENU_ID).Title("Mã chức năng").Width(130);
+        columns.Bound(p => p.MENU_NAME).Title("Tên chức năng");
+        columns.Bound(p => p.ICON_SEQ).Title("Icon").Width(150);
+        columns.Bound(p => p.DISPLAY_SEQ).Title("Thứ tự").Width(40);
+        columns.Bound(p => p.CONTROLER_NAME).Title("Controler").Width(100);
+        columns.Bound(p => p.ACTION_NAME).Title("Action").Width(100);
+        columns.Bound(p => p.REC_STATUS).Title("Trạng thái").Width(100);
+    })
+    .Pageable()
+    .Sortable()
+    .Scrollable(scr => scr.Height(430))
+    .Filterable()
+    .DataSource(dataSource => dataSource
+        .Ajax()
+        .PageSize(20)
+        .ServerOperation(true)
+     )
+)

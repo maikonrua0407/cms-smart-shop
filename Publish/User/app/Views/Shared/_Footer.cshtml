@@ -1,0 +1,23 @@
+﻿@using SmartShop.UI
+
+@{
+    var pType = WebInfoSvr.GetAllItem();
+}
+<div class="footer">
+    <link href="@AppEnv.ApplicationPath/Content/themes/FCompany/Company.css"
+        rel="stylesheet" type="text/css" />
+    <div class="ext_bottom_footer_text">
+        <p>
+            <strong>@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.BAN_QUYEN.id)).Value</strong><br />
+            @pType.FirstOrDefault(e => e.Info.Equals(ThongTin.DIA_CHI.id)).Value<br />
+            Email: <a href="@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.EMAIL.id)).Value">@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.EMAIL.id)).Value</a> - Website: <a href="@AppEnv.ApplicationPath/Trangchu">@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.WEBSITE.id)).Value</a>
+            <br />
+        </p><p></p>
+    </div>
+    <div id="Poweredby">
+        <div style="visibility: visible; text-align: right; width: 100%; padding-bottom: 5px; color: #04B1FF;">
+            <a href="http://letruong.somee.com/default.aspx" title="Thiết kế web | Phát triển ứng dụng web chuyên nghiệp"
+                target="_blank">Thiết kế web</a> : Lê Quang Trường
+        </div>
+    </div>
+</div>

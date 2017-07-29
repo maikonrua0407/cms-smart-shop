@@ -1,0 +1,26 @@
+﻿@using SmartShop.UI
+
+@{
+    var lstProvider = ProviderSvr.GetAllItem();
+}
+<div class="zonespace">
+</div>
+<div class="cattab">
+    <h2>Thương hiệu uy tín</h2>
+</div>
+
+<div class="brands">
+    <div class="container">
+        <div class="owl-carousel owl-carousel6-brands">
+            @foreach (var r in lstProvider)
+            {
+                var scr = AppEnv.ApplicationPath + r.Logo.Replace("~", "");
+                <a href="javascript:void(0)"><img src="@scr" alt="canon" title="canon"></a>
+            }
+        </div>
+        <div disabled="true" style="display: block; top: 45px;" class="jcarousel-prev jcarousel-prev-horizontal jcarousel-prev-disabled jcarousel-prev-disabled-horizontal">
+        </div>
+        <div disabled="false" style="display: block; top: 45px;" class="jcarousel-next jcarousel-next-horizontal">
+        </div>
+    </div>
+</div>

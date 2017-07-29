@@ -1,0 +1,24 @@
+﻿@using SmartShop.DAL
+@model List<Category>
+
+@{
+    foreach (var item in Model)
+    {
+    <tr>
+        <td>@item.CategoryID</td>
+        <td>@item.CategoryName</td>
+        <td>@item.Description</td>
+        <td>@item.NoSymbolName</td>
+        <td>
+            <a href="javascript:void(0);" onclick="createProcess('@item.CategoryID');">
+                <i class="fa fa-lg fa-edit"></i>
+            </a>
+        </td>
+        <td>
+            <a href="javascript:void(0);" onclick="deleteProcess('@item.CategoryID');">
+                <i class="fa fa-lg fa-trash-o"></i>
+            </a>
+        </td>
+    </tr>
+    }
+}

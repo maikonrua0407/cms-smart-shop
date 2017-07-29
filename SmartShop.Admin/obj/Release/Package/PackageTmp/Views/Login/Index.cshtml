@@ -1,0 +1,268 @@
+﻿@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+
+    <title>Smart shop</title>
+    <meta name="description" content="">
+    <meta name="author" content="">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+    @Styles.Render("~/Content/css")
+    <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/css/bootstrap.min.css")" />
+    <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/css/font-awesome.min.css")" />
+
+    <!-- SmartAdmin Styles : Please note (smartadmin-production.css) was created using LESS variables -->
+    <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/css/smartadmin-production.css")" />
+    <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/css/smartadmin-skins.css")" />
+
+    <!-- Demo purpose only: goes with demo.js, you can delete this css when designing your own WebApp -->
+    <link rel="stylesheet" type="text/css" media="screen" href="@Url.Content("~/Content/css/demo.css")" />
+
+    <!-- FAVICONS -->
+    <link rel="shortcut icon" href="@Url.Content("~/Content/img/favicon/favicon.ico")" type="image/x-icon" />
+    <link rel="icon" href="@Url.Content("~/Content/img/favicon/favicon.ico")" type="image/x-icon" />
+
+    <!-- GOOGLE FONT -->
+    @*<link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:400italic,700italic,300,400,700" />*@
+    <link href="@Url.Content("~/Content/css/googleapis.css")" rel="stylesheet" />
+</head>
+<body id="login" class="animated fadeInDown">
+    <!-- possible classes: minified, no-right-panel, fixed-ribbon, fixed-header, fixed-width-->
+    <header id="header">
+        <!--<span id="logo"></span>-->
+
+        <div id="logo-group">
+            <span id="logo">
+                <img src="@Url.Content("~/Content/img/logo.png")" alt="Smart Shop">
+            </span>
+
+            <!-- END AJAX-DROPDOWN -->
+        </div>
+    </header>
+
+    <div id="main" role="main">
+
+        <!-- MAIN CONTENT -->
+        <div id="content" class="container">
+
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-7 col-lg-8 hidden-xs hidden-sm">
+                    <h1 class="txt-color-red login-header-big">Smart Shop</h1>
+                    <div class="hero">
+
+                        <div class="pull-left login-desc-box-l">
+                            <h4 class="paragraph-header">It's Okay to be Smart. Experience the simplicity of Smart Shop, everywhere you go!</h4>
+                        </div>
+
+                        <img src="@Url.Content("~/Content/img/demo/iphoneview.png")" class="pull-right display-image" alt="" style="width: 210px">
+                    </div>
+                </div>
+                <div id="login-div" class="col-xs-12 col-sm-12 col-md-5 col-lg-4">
+                    <div class="well no-padding">
+                        @using (Ajax.BeginForm("DoLogin", "Login", null, new AjaxOptions() { HttpMethod = "POST", OnSuccess = "LoginSuccess" }, new { @id = "login-form", @class = "smart-form client-form" }))
+                        {
+                            <header>
+                                Sign In
+                            </header>
+
+                            <fieldset>
+
+                                <section>
+                                    <label class="label">User</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="text" name="user" autocomplete="off">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>Please enter email address/username</b></label>
+                                </section>
+
+                                <section>
+                                    <label class="label">Password</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-lock"></i>
+                                        <input type="password" name="pass" autocomplete="off">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-lock txt-color-teal"></i>Enter your password</b>
+                                    </label>
+                                    <div class="note">
+                                        <a href="javascript:void(0);" onclick="SwitchLoginForgot();">Forgot password?</a>
+                                    </div>
+                                </section>
+
+                                <section>
+                                    <label class="checkbox">
+                                        <input type="checkbox" name="remember" checked="">
+                                        <i></i>Stay signed in</label>
+                                </section>
+                            </fieldset>
+                            <footer>
+                                <button type="submit" class="btn btn-primary">
+                                    Sign in
+                                </button>
+                            </footer>
+                        }
+
+                    </div>
+
+                </div>
+
+                <div id="forgot-pass-div" class="col-xs-12 col-sm-12 col-md-5 col-lg-4" style="display: none;">
+                    <div class="well no-padding">
+                        <form id="forgot-pass-form" class="smart-form client-form">
+                            <header>
+                                Forgot Password
+                            </header>
+
+                            <fieldset>
+
+                                <section>
+                                    <label class="label">Enter your email address</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-envelope"></i>
+                                        <input type="email" name="email" autocomplete="off">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-envelope txt-color-teal"></i>Please enter email address for password reset</b></label>
+                                </section>
+                                <section>
+                                    <span class="timeline-seperator text-center text-primary"><span class="font-sm">OR</span>
+                                </section>
+                                <section>
+                                    <label class="label">Your Username</label>
+                                    <label class="input">
+                                        <i class="icon-append fa fa-user"></i>
+                                        <input type="text" name="username" autocomplete="off">
+                                        <b class="tooltip tooltip-top-right"><i class="fa fa-user txt-color-teal"></i>Enter your username</b>
+                                    </label>
+                                    <div class="note">
+                                        <a href="javascript:void(0);" onclick="SwitchLoginForgot();">I remembered my password!</a>
+                                    </div>
+                                </section>
+
+                            </fieldset>
+                            <footer>
+                                <button type="submit" class="btn btn-primary">
+                                    <i class="fa fa-refresh"></i>Reset Password
+                                </button>
+                            </footer>
+                        </form>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <!--================================================== -->
+
+        <!-- PACE LOADER - turn this on if you want ajax loading to show (caution: uses lots of memory on iDevices)-->
+        <script src="@Url.Content("~/Scripts/js/plugin/pace/pace.min.js")"></script>
+
+        <!-- Link to Google CDN's jQuery + jQueryUI; fall back to local -->
+        <script src="@Url.Content("~/Scripts/js/libs/jquery-2.0.2.min.js")")"></script>
+
+        <script src="@Url.Content("~/Scripts/js/libs/jquery-ui-1.10.3.min.js")")"></script>
+
+        <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")")"></script>
+        <script src="@Url.Content("~/Scripts/CommonScript.js")")"></script>
+        <script src="@Url.Content("~/Scripts/jquery-ui.js")")"></script>
+
+        <!-- JS TOUCH : include this plugin for mobile drag / drop touch events 		
+		<script src="@Url.Content("~/Scripts/js/plugin/jquery-touch/jquery.ui.touch-punch.min.js")"></script> -->
+
+        <!-- BOOTSTRAP JS -->
+        <script src="@Url.Content("~/Scripts/js/bootstrap/bootstrap.min.js")"></script>
+
+        <!-- CUSTOM NOTIFICATION -->
+        <script src="@Url.Content("~/Scripts/js/notification/SmartNotification.min.js")"></script>
+
+        <!-- JARVIS WIDGETS -->
+        <script src="@Url.Content("~/Scripts/js/smartwidgets/jarvis.widget.min.js")"></script>
+
+        <!-- JQUERY VALIDATE -->
+        <script src="@Url.Content("~/Scripts/js/plugin/jquery-validate/jquery.validate.min.js")"></script>
+
+        <!-- JQUERY MASKED INPUT -->
+        <script src="@Url.Content("~/Scripts/js/plugin/masked-input/jquery.maskedinput.min.js")"></script>
+
+        <!-- JQUERY SELECT2 INPUT -->
+        <script src="@Url.Content("~/Scripts/js/plugin/select2/select2.min.js")"></script>
+
+        <!-- JQUERY UI + Bootstrap Slider -->
+        <script src="@Url.Content("~/Scripts/js/plugin/bootstrap-slider/bootstrap-slider.min.js")"></script>
+
+        <!-- browser msie issue fix -->
+        <script src="@Url.Content("~/Scripts/js/plugin/msie-fix/jquery.mb.browser.min.js")"></script>
+
+        <!-- FastClick: For mobile devices -->
+        <script src="@Url.Content("~/Scripts/js/plugin/fastclick/fastclick.js")"></script>
+
+        <!--[if IE 7]>
+			
+			<h1>Your browser is out of date, please update your browser by going to www.microsoft.com/download</h1>
+			
+		<![endif]-->
+
+        <!-- MAIN APP JS FILE -->
+        <script src="@Url.Content("~/Scripts/js/app.js")"></script>
+
+        <script type="text/javascript">
+            runAllForms();
+
+            $(function () {
+                // Validation
+                $("#login-form").validate({
+                    // Rules for form validation
+                    rules: {
+                        email: {
+                            required: true
+                        },
+                        password: {
+                            required: true,
+                            minlength: 1,
+                            maxlength: 20
+                        }
+                    },
+
+                    // Messages for form validation
+                    messages: {
+                        email: {
+                            required: 'Please enter your user'
+                        },
+                        password: {
+                            required: 'Please enter your password'
+                        }
+                    },
+
+                    // Do not change code below
+                    errorPlacement: function (error, element) {
+                        error.insertAfter(element.parent());
+                    }
+                });
+            });
+
+            function SwitchLoginForgot() {
+                var login = $("#login-div").css("display")
+                if (typeof login === 'undefined' || login == 'block') {
+                    $("#forgot-pass-div").show();
+                    $("#login-div").hide();
+                } else {
+                    $("#login-div").show();
+                    $("#forgot-pass-div").hide();
+                }
+            }
+
+            function LoginSuccess(data)
+            {
+                if (typeof data === 'undefined' || data == '') {
+                    alert('Đăng nhập không thành công. \n Vui lòng thử lại.')
+                }
+                else {
+                    document.location.href = "Home";
+                }
+            }
+        </script>
+</body>
+</html>

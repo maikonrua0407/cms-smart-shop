@@ -1,0 +1,51 @@
+﻿@using SmartShop.UI
+
+@{
+    var pType = WebInfoSvr.GetAllItem();
+}
+
+<div class="support-container">
+    <div class="support-content">
+        <ul class="support_banner">
+            <li class="first" onclick="javascript:window.location.href=&#39;@AppEnv.ApplicationPath/contact/&#39;; return false;">
+                <span>CSKH</span><p>
+                    @pType.FirstOrDefault(e => e.Info.Equals(ThongTin.CSKH.id)).Value
+                </p>
+            </li>
+            <li class="last"><span>KD ONLINE</span><p>
+                @pType.FirstOrDefault(e => e.Info.Equals(ThongTin.KINH_DOANH.id)).Value
+            </p>
+            </li>
+        </ul>
+        <ul class="sub">
+            <li class="first"><a class="text" href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO1.id)).Value" title="">Hỗ trợ 1</a>
+                <a class="live" title="Chat trực tiếp trên website, không cần tạo tài khoản" href="#">
+                    <img class="livechat" src="@AppEnv.ApplicationPath/Content/imgs/support/livechat-on.gif"
+                        border="0" alt="Livechat :)" />
+                </a><a href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO1.id)).Value">
+                    <img width="22" border="0" src="http://opi.yahoo.com/online?u=bcare_kd01&m=g&t=19"
+                        mce_src="http://opi.yahoo.com/online?u=bcare_kd01&m=g&t=19" />
+                </a></li>
+            <li><a class="text" href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO2.id)).Value" title="">Hỗ trợ 2</a> <a class="live"
+                title="Chat trực tiếp trên website, không cần tạo tài khoản" href="#">
+                <img class="livechat" src="@AppEnv.ApplicationPath/Content/imgs/support/livechat-on.gif"
+                    border="0" alt="Livechat :)" />
+            </a><a href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO2.id)).Value">
+                <img width="22" border="0" src="http://opi.yahoo.com/online?u=bcare_kd02&m=g&t=19"
+                    mce_src="http://opi.yahoo.com/online?u=bcare_kd02&m=g&t=19" />
+            </a></li>
+            <li><a class="text" href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO3.id)).Value" title="">Hỗ trợ 3</a> <a class="live"
+                title="Chat trực tiếp trên website, không cần tạo tài khoản" href="#">
+                <img class="livechat" src="@AppEnv.ApplicationPath/Content/imgs/support/livechat-on.gif"
+                    border="0" alt="Livechat :)">
+            </a><a href="ymsgr:sendIM?@pType.FirstOrDefault(e => e.Info.Equals(ThongTin.YAHOO3.id)).Value">
+                <img width="22px" border="0" src="http://opi.yahoo.com/online?u=bcare_kd03&m=g&t=19"
+                    mce_src="http://opi.yahoo.com/online?u=bcare_kd03&m=g&t=19">
+            </a></li>
+            <li style="width: 200px;">
+                <br />
+                <a href="http://letruong.somee.com/default.aspx" title="Thiết kế web | Phát triển ứng dụng web chuyên nghiệp"
+                    target="_blank">Thiết kế web : Lê Quang Trường</a> </li>
+        </ul>
+    </div>
+</div>

@@ -1,0 +1,137 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <link media="all" href="@Url.Content("~/Content/stylesheet/counter013.css")" type="text/css" rel="stylesheet" />
+    <link media="all" href="@Url.Content("~/Content/stylesheet/widget118.css")" type="text/css" rel="stylesheet" />
+    <title>@ViewBag.Title</title>
+    <meta name="keywords" content="trang chủ, thiết bị y tế" />
+    <meta name="description" content="Bcare - Mua sắm trực tuyến: thiết bị chăm sóc sức khỏe, đồ dùng trẻ em ..." />
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <meta http-equiv="content-lang" content="vi" />
+    <meta name="copyright" content="Bản quyền thuộc về Bcare" />
+    <meta name="author" content="http://www.letruong.somee.com;Email:lequangtruong542@gmail.com" />
+    <meta name="owner" content="http://bcare.vn" />
+    <meta name="revisit-after" content="1 day" />
+    <meta name="document-rating" content="General" />
+    <meta name="document-distribution" content="Global" />
+    <meta name="placename" content="vietnam" />
+    <meta name="resource-type" content="Document" />
+    <meta name="rating" content="All" />
+    <meta name="robots" content="INDEX,FOLLOW" />
+    <meta name="google-site-verification" content="_NqyOCaCIWfwSSDvNUa4eUxYVHicQBUBKxNcrv0V6V0" />
+    <meta name="Search Engines" content="www.altaVista.com, www.aol.com, www.infoseek.com, www.excite.com, www.hotbot.com, www.lycos.com, www.magellan.com, www.looksmart.com, www.cnet.com, www.voila.com, www.google.fr, www.google.com, www.google.com.vn, www.yahoo.fr, www.yahoo.com, www.alltheweb.com, www.msn.com, www.netscape.com, www.nomade.com" />
+    <link rel="SHORTCUT ICON" href="@Url.Content("~/Content/imgs/global/icon.ico")" />
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    <link href="@Url.Content("~/Content/stylesheet/reset.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/default.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/common.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/menutab.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/bootstrap.min.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FCompany/Company.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FMenu/ddlistmenu.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FProduct/BestProductAutoSlidejCarousel.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FProduct/GroupProductAutoSlidejCarousel.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FProduct/BranchAutoSlidejCarousel.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/FMenu/verticalmegamenu.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/themes/DeployStyleSheets/vn/Default.css")" rel="stylesheet" />
+    @*<link href="@Url.Content("~/Content/stylesheet/support-footer.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/cartPopup.css")" rel="stylesheet" />
+    <link href="@Url.Content("~/Content/stylesheet/highslide.css")" rel="stylesheet" />*@
+
+    <script src="@Url.Content("~/Scripts/jquery.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-1.9.1.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/autotabscroll.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery-ui.min.js")"></script>
+
+    <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")"></script>
+    <script src="@Url.Content("~/Scripts/facescroll.js")"></script>
+    <script src="@Url.Content("~/Scripts/slides.min.jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/fadeSlideShow.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.hoverIntent.minified.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.verticalmegamenu.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.jcarousel.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.easing.1.3.min.js")"></script>
+    <script src="@Url.Content("~/Scripts/jquery.selectbox.js")"></script>
+    <script src="@Url.Content("~/Scripts/tooltip.jquery.js")"></script>
+    <script src="@Url.Content("~/Scripts/common.js")"></script>
+    <script src="@Url.Content("~/Scripts/uptop.js")"></script>
+</head>
+<body>
+    <div id="fb-root">
+    </div>
+
+    <div id="wrapper">
+        <!-- start: Header  -->
+        <div class="header-container">
+            <div class="top-container">
+                @Html.Partial("_TopLink")
+            </div>
+            @Html.Partial("_Header")
+        </div>
+        <!-- end: Header  -->
+
+        <!-- start: QuickSearch  -->
+        @Html.Partial("_QuickSearch")
+        <!-- end: QuickSearch  -->
+
+        <!-- start: MainBody  -->
+        <div class="mainbody">
+            @RenderBody()
+        </div>
+        <!-- end: MainBody  -->
+
+        <!-- start: NavigateFooter-->
+        @Html.Partial("_NavigateFooter")
+        <!-- end: NavigateFooter-->
+
+        <!-- star : copyright -->
+        @Html.Partial("_Footer")
+
+        @Html.Partial("_SupportFooter")
+        <!-- end : copyright -->
+
+        <!-- end : Footer -->
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+
+    <script type="text/javascript">
+        function mycarousel_initCallback(carousel) {
+            // Disable autoscrolling if the user clicks the prev or next button. 
+            carousel.buttonNext.bind('click', function () {
+                carousel.startAuto(0);
+            });
+            carousel.buttonPrev.bind('click', function () {
+                carousel.startAuto(0);
+            });
+            // Pause autoscrolling if the user moves with the cursor over the clip. 
+            carousel.clip.hover(function () {
+                carousel.stopAuto();
+            }, function () {
+                carousel.startAuto();
+            });
+        };
+        jQuery(document).ready(function () {
+            jQuery('.jcarousel-list').jcarousel({
+                auto: 0,
+                wrap: 'last',
+                initCallback: mycarousel_initCallback,
+            });
+        });
+    </script>
+
+    <script>
+        (function (d, s, id) {
+            var js, fjs = d.getElementsByTagName(s)[0];
+            if (d.getElementById(id)) return;
+            js = d.createElement(s); js.id = id;
+            js.src = "//connect.facebook.net/en_US/all.js#xfbml=1";
+            fjs.parentNode.insertBefore(js, fjs);
+        }(document, 'script', 'facebook-jssdk'));
+    </script>
+
+    @RenderSection("scripts", required: false)
+</body>
+</html>

@@ -1,0 +1,61 @@
+﻿@using SmartShop.UI
+@{
+    var cat = ProductCatSvr.GetAllCategory();
+    var group = ProductGroupSvr.GetAllItem();
+}
+<div class="menutop">
+    <div class="menutop_holder">
+        <div class="quicksearch_holder" style="margin-left: 250px;">
+            <div id="searchCate">
+                <select class="cssmediumcomboboxdialog" id="cmbGroupCategory" tooltiptext="Tất cả">
+                    <option selected="true" value="All">Tất cả</option>
+                    @foreach (var root in cat)
+                    {
+                        <option value=" + root.CategoryID + ">@root.CategoryName</option>
+                        foreach (var sub in group.Where(e => e.GroupParrentID == null && e.CategoryID == root.CategoryID))
+                        {
+                            <option value=" + sub.ProductGroupID + ">--@sub.GroupName</option>
+                            foreach (var sSub in group.Where(e => e.GroupParrentID == sub.ProductGroupID))
+                            {
+                            <option value=" + sSub.ProductGroupID + ">----@sSub.GroupName</option>
+                            }
+                        }
+                    }
+                </select>
+            </div>
+            <div id="searchDiv">
+                <input class="searchinput_textbox" name="txtKeyword" id="txtKeyword"
+                    onfocus="if(this.value=='Nhập tên sản phẩm ...') this.value='';" onblur="if(this.value=='') this.value='Nhập tên sản phẩm ...';"
+                    value="Nhập tên sản phẩm ..." type="text" style="border-radius: 0; height: 22px; margin-bottom: 0px;" />
+            </div>
+            <div id="searchBut">
+                <a href="javascript:ClientDoQuickSearchProByCat();">
+                    <img class="cssImageSubmit" title="Tìm kiếm" src="@AppEnv.ApplicationPath/Content/imgs/icon/icon_search.png"
+                        border="0"></a>
+            </div>
+        </div>
+        <div class="header-cart">
+            <a title="Giỏ hàng" href="@AppEnv.ApplicationPath/GioHang" class="cart-link">Giỏ hàng</a>
+            <span class="count">0</span>
+        </div>
+    </div>
+    <script type="text/javascript">
+        $(function () {
+            $('#txtKeyword').keypress(function (e) {
+                if (e.which == 13) {
+                    var obj = new Object();
+                    obj.Category = $("#cmbGroupCategory").val();
+                    obj.Keyword = $("#txtKeyword").val();
+                    document.location = url;
+                }
+            });
+        });
+        //<![CDATA[
+        $("#GroupCategoryId").selectbox().bind('change', function () {
+            $($(this).val()).fadeOut(5000, function () {
+                $(this).remove();
+            });
+        });
+        //]]> 
+    </script>
+</div>

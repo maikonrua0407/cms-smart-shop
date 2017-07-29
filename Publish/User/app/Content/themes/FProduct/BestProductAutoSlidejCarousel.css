@@ -1,0 +1,304 @@
+
+.jcarousel-skin-BestProduct .jcarousel-direction-rtl {
+    direction: rtl;
+}
+.jcarousel-skin-BestProduct .jcarousel-container-horizontal {
+    background-color: #FFFFFF;
+    border: 1px solid #cbdfec;
+    border-radius: 0 0 5px 5px;
+    overflow: hidden;
+    padding: 10px 25px;
+    position: relative;
+    width: 926px;
+}
+.jcarousel-skin-BestProduct .jcarousel-container-vertical {
+    height: 125px;
+    padding: 30px 20px;
+    width: 225px;
+}
+.jcarousel-skin-BestProduct .jcarousel-clip {
+    overflow: hidden;
+}
+.jcarousel-skin-BestProduct .jcarousel-clip-horizontal {
+    width: 930px;
+}
+.jcarousel-skin-BestProduct .jcarousel-clip-vertical {
+    height: 125px;
+    width: 225px;
+}
+.jcarousel-skin-BestProduct .jcarousel-item {
+    height: auto;
+    text-align: center;
+    width: 175px;
+}
+.jcarousel-skin-BestProduct .jcarousel-item .saleprice {
+    color: #ED1C24;
+    height: auto;
+    text-align: center;
+    width: 152px;
+}
+.jcarousel-skin-BestProduct .jcarousel-item .vj-productname {
+    height: auto;
+    text-align: center;
+    width: 152px;
+}
+.jcarousel-skin-BestProduct .jcarousel-item-horizontal {
+    border: 1px solid #e7e9ea;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    padding: 10px 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 5px;
+    margin-right: 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-item-vertical {
+    margin-bottom: 5px;
+}
+.jcarousel-skin-BestProduct .jcarousel-item-placeholder {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #000000;
+}
+.jcarousel-skin-BestProduct .jcarousel-next-horizontal {
+    background: url("../../imgs/icon/adv_next-horizontal.png") no-repeat scroll 2px 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 32px;
+    position: absolute;
+    right: 5px;
+    top: 130px;
+    width: 32px;
+}
+.jcarousel-skin-BestProduct .jcarousel-direction-rtl .jcarousel-next-horizontal {
+    background: url("../../imgs/icon/adv_prev-horizontal.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    left: 5px;
+    right: auto;
+}
+.jcarousel-skin-BestProduct .jcarousel-next-horizontal:hover, .jcarousel-skin-BestProduct .jcarousel-next-horizontal:focus {
+    background-position: -30px 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-next-horizontal:active {
+    background-position: -61px 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-next-disabled-horizontal, .jcarousel-skin-BestProduct .jcarousel-next-disabled-horizontal:hover, .jcarousel-skin-BestProduct .jcarousel-next-disabled-horizontal:focus, .jcarousel-skin-BestProduct .jcarousel-next-disabled-horizontal:active {
+    background-position: -96px 0;
+    cursor: default;
+}
+.jcarousel-skin-BestProduct .jcarousel-prev-horizontal {
+    background: url("../../imgs/icon/adv_prev-horizontal.png") no-repeat scroll -5px 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 32px;
+    left: 5px;
+    position: absolute;
+    top: 130px;
+    width: 30px;
+}
+.jcarousel-skin-BestProduct .jcarousel-direction-rtl .jcarousel-prev-horizontal {
+    background: url("../../imgs/icon/adv_next-horizontal.png") repeat scroll 0 0 rgba(0, 0, 0, 0);
+    left: auto;
+    right: 5px;
+}
+.jcarousel-skin-BestProduct .jcarousel-prev-horizontal:hover, .jcarousel-skin-BestProduct .jcarousel-prev-horizontal:focus {
+    background-position: -37px 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-prev-horizontal:active {
+    background-position: -68px 0;
+}
+.jcarousel-skin-BestProduct .jcarousel-prev-disabled-horizontal, .jcarousel-skin-BestProduct .jcarousel-prev-disabled-horizontal:hover, .jcarousel-skin-BestProduct .jcarousel-prev-disabled-horizontal:focus, .jcarousel-skin-BestProduct .jcarousel-prev-disabled-horizontal:active {
+    background-position: -100px 0;
+    cursor: default;
+}
+.productprice {
+    color: #E34843;
+}
+.jcarousel-skin-BestProduct .jcarousel-item-horizontal .productname h1 {
+    font-size: 12px;
+    height: 20px;
+    margin-top: 10px;
+    text-align: center;
+}
+.jcarousel-skin-VBestProduct .jcarousel-container-vertical {
+    height: 425px;
+    padding: 25px 0;
+    width: 225px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-clip {
+    overflow: hidden;
+}
+.jcarousel-skin-VBestProduct .jcarousel-clip-vertical {
+    border: 1px solid #FCFCFC;
+    height: 420px;
+    width: 223px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-item {
+    height: 125px;
+    width: 215px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-item-horizontal {
+    margin-left: 0;
+    margin-right: 10px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-direction-rtl .jcarousel-item-horizontal {
+    margin-left: 10px;
+    margin-right: 0;
+}
+.jcarousel-skin-VBestProduct .jcarousel-item-vertical {
+    margin-bottom: 5px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-item-placeholder {
+    background: none repeat scroll 0 0 #FFFFFF;
+    color: #000000;
+}
+.jcarousel-skin-VBestProduct .jcarousel-next-vertical {
+    background: url("../../imgs/icon/next-vertical.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    bottom: 0;
+    cursor: pointer;
+    height: 32px;
+    left: 93px;
+    position: absolute;
+    width: 32px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-next-vertical:hover, .jcarousel-skin-VBestProduct .jcarousel-next-vertical:focus {
+    background-position: 0 -32px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-next-vertical:active {
+    background-position: 0 -64px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-next-disabled-vertical, .jcarousel-skin-VBestProduct .jcarousel-next-disabled-vertical:hover, .jcarousel-skin-VBestProduct .jcarousel-next-disabled-vertical:focus, .jcarousel-skin-VBestProduct .jcarousel-next-disabled-vertical:active {
+    background-position: 0 -96px;
+    cursor: default;
+}
+.jcarousel-skin-VBestProduct .jcarousel-prev-vertical {
+    background: url("../../imgs/icon/prev-vertical.png") no-repeat scroll 0 0 rgba(0, 0, 0, 0);
+    cursor: pointer;
+    height: 32px;
+    left: 93px;
+    position: absolute;
+    top: 0;
+    width: 32px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-prev-vertical:hover, .jcarousel-skin-VBestProduct .jcarousel-prev-vertical:focus {
+    background-position: 0 -32px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-prev-vertical:active {
+    background-position: 0 -64px;
+}
+.jcarousel-skin-VBestProduct .jcarousel-prev-disabled-vertical, .jcarousel-skin-VBestProduct .jcarousel-prev-disabled-vertical:hover, .jcarousel-skin-VBestProduct .jcarousel-prev-disabled-vertical:focus, .jcarousel-skin-VBestProduct .jcarousel-prev-disabled-vertical:active {
+    background-position: 0 -96px;
+    cursor: default;
+}
+.jcarousel_imgAdv {
+    height: 128px;
+    width: 128px;
+    border:none;
+}
+
+.jcarousel-skin-BestProduct  { position:relative; padding: 5px 0px 0px 0px;}
+.jcarousel-skin-BestProduct .last { border-bottom:0; padding-bottom: 5px;}
+.jcarousel-skin-BestProduct  li.item { border:1px solid #cfcfcf; float:left; width:172px; height: 270px; position: relative; margin-right:10px; padding:2px 2px 1px 1px;}
+.jcarousel-skin-BestProduct  li.item:hover{ border:1px solid #62bdea; background: none !important;}
+.jcarousel-skin-BestProduct  li.last{margin-right:0}
+.jcarousel-skin-BestProduct  .product-image { display:block; width:150px; height:150px; margin:auto}
+.jcarousel-skin-BestProduct  .starPromotion{ position: absolute; top:5px; right: 4px; background: url(../../imgs/icon/tem.png) top right no-repeat; width: 48px; height: 50px; color: #fff;}
+.grid_bao_hang_elex{ position: absolute; top:60px; left: 56px;}
+.jcarousel-skin-BestProduct  .starPromotion span{ font-weight: bold; color: #fff; font-size: 1em; position: absolute; top:14px; right:1px; text-align: center; width: 48px;}
+.jcarousel-skin-BestProduct  .gift-img{ width: 34px; height: 33px; position: absolute; top:120px; right: 10px; background: url(../../imgs/icon/gift.png) center no-repeat;}
+.jcarousel-skin-BestProduct  .product-name {/*min-height:2.7em;*/ margin:5px 0 0; font-weight:normal; font-size:13px; padding: 0px 12px 0px 12px; height: 37px; overflow: hidden;}
+.jcarousel-skin-BestProduct  .product-name a { color:#202020; padding: 0px 0px 0px 0px !important;}
+.jcarousel-skin-BestProduct  .product-name a:hover { text-decoration: none;}
+.jcarousel-skin-BestProduct  .price-box { height: 63px; position: relative;}
+.jcarousel-skin-BestProduct  .price-box .old-price .price{ font-weight: normal !important; color: #050706; position: absolute; bottom: -10px; left: 12px; font-size: 1.1em !important; line-height: 2em !important;}
+.jcarousel-skin-BestProduct  .price-box .special-price .price{ color: #004b8f; font-size: 1.5em; line-height: 2.2em; font-weight: normal !important; position: absolute; top:-10px; left:12px;}
+.jcarousel-skin-BestProduct  .price-box .save-cost span{  background: #ee3f22; color: #fff; padding: 1px 12px 1px 12px; position: absolute; top:28px; left: 12px; width: 75%; display: block; border-radius: 3px}
+.jcarousel-skin-BestProduct  .price-box .regular-price .price{ color: #004b8f; font-size: 1.5em; line-height: 2.2em; font-weight: normal !important; position: absolute; top:-10px; left:12px;}
+.jcarousel-skin-BestProduct  .availability { line-height:21px; }
+.jcarousel-skin-BestProduct  .actions { display:none; position:absolute; height:57px; top:48%; margin-top:-28px; width:172px; background-color:rgba(125, 204, 237, 0.6)}
+.jcarousel-skin-BestProduct  li.item:hover .actions{display:block}
+.jcarousel-skin-BestProduct  .actions li{float:left; height:31px; background-position:left bottom; background-repeat: no-repeat; width:32px; margin-top:13px}
+.jcarousel-skin-BestProduct  .actions li.link-wishlist{margin-left:9px; background-image: url('../../imgs/icon/wishlist-bg.gif')}
+.jcarousel-skin-BestProduct  .actions li.link-compare{margin:13px 9px 0; background-image: url('../../imgs/icon/compare-bg.gif')}
+.jcarousel-skin-BestProduct  .actions li.btn-buynow{width:67px; background-image: url('../../imgs/icon/buy-now.gif')}
+.jcarousel-skin-BestProduct  .actions li a{width:100%; display:block; height:100%}
+.jcarousel-skin-BestProduct  .actions li:hover{background-position:left top}
+.jcarousel-skin-BestProduct  .add-to-links{margin:0}
+.col2-left-layout .jcarousel-skin-BestProduct ,
+.col2-right-layout .jcarousel-skin-BestProduct  { width:797px; margin:0 auto; }
+.col1-layout .jcarousel-skin-BestProduct  { width:100%; margin:0 auto; }
+
+/********** < Product Prices */
+.price { white-space:nowrap !important; }
+
+.price-box { margin:5px 0; }
+.price-box .price { /*font-weight:bold*/; color:#c76200; }
+
+/* Regular price */
+.regular-price { color:#c76200; }
+.regular-price .price { font-weight:bold; font-size:13px; color:#c76200; }
+.block .regular-price,
+.block .regular-price .price { color:#2f2f2f; }
+
+/* Old price text-decoration:line-through; */
+.old-price { margin:0; }
+.old-price .price-label { white-space:nowrap; color:#999; display: none;}
+.old-price .price { /*font-weight:bold;*/ color:#c76200;  }
+
+/* Special price */
+.special-price { margin:0; padding:3px 0; }
+.special-price .price-label { font-size: 1em; /*font-weight:bold;*/ white-space:nowrap; color:#cd5033;display: none;}
+.special-price .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Minimal price (as low as) */
+.minimal-price { margin:0; }
+.minimal-price .price-label { font-weight:bold; white-space:nowrap; display: none;}
+
+.minimal-price-link { display:block; }
+.minimal-price-link .label {color:#1e7ec8;}
+.minimal-price-link .price { font-weight:normal; color:#1e7ec8; }
+
+/* Excluding tax */
+.price-excluding-tax { display:block; color:#999; }
+.price-excluding-tax .label { white-space:nowrap; color:#999; }
+.price-excluding-tax .price { font-size:13px; font-weight:normal; color:#c76200; }
+
+/* Including tax */
+.price-including-tax { display:block; color:#999; }
+.price-including-tax .label { white-space:nowrap; color:#999; }
+.price-including-tax .price { font-size:13px; font-weight:bold; color:#c76200; }
+
+/* Configured price */
+.configured-price { margin:0; }
+.configured-price .price-label { font-weight:bold; white-space:nowrap; display: none;}
+.configured-price .price { font-weight:bold; }
+
+/* FPT */
+.weee { display:block; font-size:11px; color:#444; }
+.weee .price { font-size:11px; font-weight:normal; }
+
+/* Excl tax (for order tables) */
+.price-excl-tax  { display:block; }
+.price-excl-tax .label { display:block; white-space:nowrap; }
+.price-excl-tax .price { display:block; }
+
+/* Incl tax (for order tables) */
+.price-incl-tax { display:block; }
+.price-incl-tax .label { display:block; white-space:nowrap; }
+.price-incl-tax .price { display:block; font-weight:bold; }
+
+/* Price range */
+.price-from { margin:0; }
+.price-from .price-label { font-weight:bold; white-space:nowrap;display: none; }
+
+.price-to { margin:0; }
+.price-to .price-label { font-weight:bold; white-space:nowrap;display: none; }
+
+/* Price notice next to the options */
+.price-notice { padding-left:10px; color:#999; }
+.price-notice .price { font-weight:bold; color:#2f2f2f; }
+
+/* Price as configured */
+.price-as-configured { margin:0; }
+.price-as-configured .price-label { font-weight:bold; white-space:nowrap;display: none; }
+
+.price-box-bundle { padding:0 0 10px 0; }
+.price-box-bundle .price-box { margin:0 !important; padding:0 !important; }
+.price-box-bundle .price { color:#555; }
+/********** Product Prices > */

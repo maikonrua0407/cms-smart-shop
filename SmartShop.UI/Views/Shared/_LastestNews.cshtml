@@ -1,0 +1,44 @@
+﻿@using SmartShop.UI
+
+@{
+    var lstTin = ArticalSvr.GetTopTen(10);
+}
+
+<div style="float: left; margin-left: 2px; margin-top: 0px; position: relative; width: 205px;">
+    <div class="nav-cat-title small" style="background: url(@AppEnv.ApplicationPath/Content/imgs/icon/news.jpg) no-repeat scroll 0 3px transparent; width: 200px; margin-left: 10px; color:#105CAA;"><span style="margin-left: 30px; font-weight: bold;">TIN TỨC</span></div>
+    <div style="background-color: #FFFFFF; border: 1px solid #CBDFEC; border-radius: 0 0 5px 5px; height: 260px; margin-left: 10px; overflow: hidden; position: absolute;">
+        @if (lstTin != null && lstTin.Count > 0)
+        {
+            <ul style="overflow: hidden; position: relative; float: left; clear: left;">
+            @foreach (var r in lstTin)
+            {
+                var path = r.MasterImage;
+                var href = AppEnv.ApplicationPath + "/?ID=" + r.ArticalID;
+                    <li>
+                        <div style="height: 50px; width: 200px; margin-bottom: 2px;border-bottom: 1px solid #CBDFEC;">
+                            <a href="@href">
+                                    <img class="jcarousel_imgNews" src="@path">
+                            <span style="vertical-align: top; position: absolute; margin: 2px;">@r.Title</span></a>
+                        </div>
+                    </li>
+            }
+            </ul>
+        }
+        else
+        {
+            <ul style="overflow: hidden; position: relative; float: left; clear: left;">
+            @for (int i = 1; i <= 10; i++)
+            {
+                string path = AppEnv.ApplicationPath + @"\Media\Articles\2013\7\23\nguoi-cao-tuoi-nen-tim-hieu-ve-benh-gout-2.jpg";
+                    <li>
+                        <div style="height: 50px; width: 200px; margin-bottom: 2px;border-bottom: 1px solid #CBDFEC;">
+                            <a onclick="javascript:ClientAddToListLastItems('vn','" + i + "');" href="javascript:void(0)">
+                                    <img class="jcarousel_imgNews" src="@path"></a>
+                            <span style="vertical-align: top; position: absolute; margin: 2px;">Người cao tuổi tìm hiểu bệnh gout</span>
+                        </div>
+                    </li>
+            }
+            </ul>
+        }
+    </div>
+</div>

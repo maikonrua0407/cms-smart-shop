@@ -1,0 +1,53 @@
+﻿@using SmartShop.UI
+@{
+    var cat = ProductCatSvr.GetAllCategory();
+    var group = ProductGroupSvr.GetRootItem();
+}
+<div id="searchCate">
+    <div class="parent-cate-title">
+        <p>Danh mục sản phẩm</p>
+        <ul class="parent-category">
+            @foreach (var root in group)
+            {
+                <li>
+                    @{
+                        var url = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + root.ProductGroupID;
+                    }
+                    <a href="@url">@root.GroupName</a>
+                    @{
+                        var childOne = ProductGroupSvr.GetByParrent(root.ProductGroupID);
+                    }
+                    @if (childOne.Any())
+                    {
+                        <ul class="cate-child-one">
+                            @foreach (var sub in childOne)
+                            {
+                                var subUrl = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + sub.ProductGroupID;
+                                <li>
+                                    <a href="@subUrl">
+                                        @sub.GroupName
+                                    </a>
+                                    @{
+                                        var childTwo = ProductGroupSvr.GetByParrent(sub.ProductGroupID);
+                                    }
+                                    @if (childTwo.Any())
+                                    {
+                                        <ul class="cate-child-two">
+                                            @foreach (var sSub in childTwo)
+                                            {
+                                                var sSubUrl = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + sSub.ProductGroupID;
+                                                <li>
+                                                    <a href="@sSubUrl">@sSub.GroupName</a>
+                                                </li>
+                                            }
+                                        </ul>
+                                    }
+                                </li>
+                                        }
+                        </ul>
+                                        }
+                </li>
+                                        }
+        </ul>
+    </div>
+</div>

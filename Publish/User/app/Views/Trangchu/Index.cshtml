@@ -1,0 +1,44 @@
+﻿@{
+    ViewBag.Title = "Bcare - Mua sắm trực tuyến: thiết bị chăm sóc sức khỏe, đồ dùng trẻ em ...";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- start: Banner  -->
+<div class="banner">
+    @Html.Partial("_MenuHomePage")
+    @Html.Partial("_SlideHomePage")
+    <!--<div class="bannerthree">-->
+    @Html.Partial("_LastestNews")
+</div>
+<!-- end: Banner  -->
+<!-- start: Promotion  -->
+<!-- end: Promotion  -->
+<!-- start : Content -->
+<div class="content">
+    <div class="ccontent">
+        <div class="ccontent-left">
+            <div class="cattab">
+                <span class="maingrouppro">Deal sock mỗi ngày</span>
+                <ul style="display: none;">
+                    <li class='active'><a href='#'>Bán chạy</a></li>
+                    <li><a href='#'>Mới nhất</a></li>
+                </ul>
+            </div>
+            <div class="jcarousel-skin-BestProduct">
+                <div style="position: relative; display: block;" class="jcarousel-container jcarousel-container-horizontal">
+                    <div style="position: relative;" class="jcarousel-clip jcarousel-clip-horizontal">
+                        @Html.Partial("_GoodSaleJcarousel")
+                    </div>
+                    <div disabled="true" style="display: block;" class="jcarousel-prev jcarousel-prev-horizontal jcarousel-prev-disabled jcarousel-prev-disabled-horizontal">
+                    </div>
+                    <div disabled="false" style="display: block;" class="jcarousel-next jcarousel-next-horizontal">
+                    </div>
+                </div>
+            </div>
+            @Html.Partial("_ProductGroupJcarousel")
+            @Html.Partial("_ProviderHomePage")
+        </div>
+        <!--<div class="bannerthree">-->
+    </div>
+</div>
+<!-- end : Content -->

@@ -1,0 +1,202 @@
+﻿@using SmartShop.UI
+@using System.Data
+@model SmartShop.DAL.ProductGroup
+
+@{
+    ViewBag.Title = Model.GroupName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var group = ProductGroupSvr.GetByParrent(Model.ProductGroupID);
+
+}
+
+<!-- start: Banner  -->
+@*@Html.Partial("_MenuSubPage")*@
+<!-- end: Banner  -->
+<!-- start: Promotion  -->
+<!-- start : Content -->
+<div class="zonespace"></div>
+<div class="content">
+    <!-- start: phan trai -->
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12" id="menuTopImg">
+                <div class="cate-top-img">
+                    @{
+
+                        var groupTop = group;
+                        if (!group.Any())
+                        {
+                            groupTop = ProductGroupSvr.GetByParrent(Model.GroupParrentID.Value);
+                        }
+                        foreach (var cate in groupTop)
+                        {
+                            var src = !string.IsNullOrEmpty(cate.Img) ? cate.Img : "/Media/Products/no-image.jpg";
+                            <div>
+                                <a href="#">
+                                    <img src="@src" alt="@cate.GroupName" title="@cate.GroupName"/>
+                                    <p>@cate.GroupName</p>
+                                </a>
+                            </div>
+                        }
+                    }
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-md-12">
+                <div class="nav-pro-title medium grey">
+                    <a href="trang-chu">Trang chủ</a> > <a href="trang-chu" alt="@Model.GroupName" class="current">
+                        <h2>@Model.GroupName</h2>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-3 col-sm-12 no-padding-right">
+                @Html.Partial("_MenuLeft")
+                @*@Html.Partial("_ProviderSubPage")*@
+                @Html.Partial("_BestBuySubPage")
+            </div>
+            <div class="col-md-9 col-sm-12 no-padding">
+                <div id="widget-sanpham" class="widget">
+                    @if (group.Any())
+                    {
+                        foreach (var item in group)
+                        {
+                            <div class="cate-item">
+                                @{
+                                    List<string> lstThuongHieu = new List<string>();
+                                    var lstGroupChild = ProductGroupSvr.GetByParrent(item.ProductGroupID);
+                                    int totalRecord = 0;
+                                    DataSet ds = ProductSvr.GetSanPhamTheoDieuKien(item.ProductGroupID.ToString(), "ID", "GIAM", 100, 1, ref totalRecord);
+                                    if (ds != null && ds.Tables.Count > 0)
+                                    {
+                                        DataTable dt = ds.Tables[0];
+                                        if (dt != null && dt.Rows.Count > 0)
+                                        {
+                                            totalRecord = 0;
+                                        }
+                                        <h2 class="title">
+                                            <a href="#">@item.GroupName</a>
+                                        </h2>
+                                        <div class="row">
+                                            <div class="col-md-12 col-sm-12">
+                                                <div class="cattab header-navigation">
+                                                    <ul>
+                                                        @foreach (var itemCate in lstGroupChild)
+                                                        {
+                                                            string idNhom = item.ProductGroupID.ToString();
+                                                            <li class='dropdown'><a href="#" style="padding: 5px 18px; font-size: 14px; text-transform: capitalize;">@itemCate.GroupName</a></li>
+                                                        }
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class='owl-carousel owl-carousel5'>
+
+                                            @foreach (DataRow r in dt.Rows)
+                                            {
+                                                <div>
+                                                    @if (totalRecord < 10 && ((lstThuongHieu.Count > 0 && lstThuongHieu.Contains(r["YTE_THUONG_HIEU"].ToString())) || lstThuongHieu.Count == 0))
+                                                    {
+                                                        totalRecord += 1;
+                                                        //var href = Html.Action("Index", "Nhomchitiet") + "?idNhom=" + r["ProductID"];
+                                                        string path = HeThong.duongdan_anhSP(Convert.ToInt32(r["ID"]), r["YTE_ANH_CHINH"].ToString());
+                                                        <div class="product-item">
+                                                            <div class="pi-img-wrapper">
+                                                                <a href="#">
+                                                                    <img src="@path" class="img-responsive" title="@r["TEN"].ToString()" alt="@r["TEN"].ToString()">
+                                                                </a>
+                                                            </div>
+                                                            <h3>
+                                                                <a href="#" title="@r["TEN"].ToString()">@r["TEN"].ToString()</a>
+                                                            </h3>
+                                                            <div class="pi-price">@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(r["YTE_GIA_BAN"].ToString()))</div>
+                                                        </div>
+                                                    }
+                                                </div>
+                                            }
+                                        </div>
+                                    }
+                                }
+                            </div>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <div class="cate-item">
+                                            @{
+                                                List<string> lstThuongHieu = new List<string>();
+                                                int totalRecord = 0;
+                                                DataSet ds = ProductSvr.GetSanPhamTheoDieuKien(Model.ProductGroupID.ToString(), "ID", "GIAM", 100, 1, ref totalRecord);
+
+                                                DataTable dt = ds.Tables[0];
+                                                if (dt != null && dt.Rows.Count > 0)
+                                                {
+                                                    totalRecord = 0;
+                                                }
+
+                                                <h2 class="title">
+                                                    <a href="#">@Model.GroupName</a>
+                                                </h2>
+                                                <div class='owl-carousel owl-carousel5'>
+
+                                                    @foreach (DataRow r in dt.Rows)
+                                                    {
+                                                        <div>
+                                                            @if (totalRecord < 10 && ((lstThuongHieu.Count > 0 && lstThuongHieu.Contains(r["YTE_THUONG_HIEU"].ToString())) || lstThuongHieu.Count == 0))
+                                                            {
+                                                                totalRecord += 1;
+                                                                //var href = Html.Action("Index", "Nhomchitiet") + "?idNhom=" + r["ProductID"];
+                                                                string path = HeThong.duongdan_anhSP(Convert.ToInt32(r["ID"]), r["YTE_ANH_CHINH"].ToString());
+                                                                <div class="product-item">
+                                                                    <div class="pi-img-wrapper">
+                                                                        <a href="#">
+                                                                            <img src="@path" class="img-responsive" title="@r["TEN"].ToString()" alt="@r["TEN"].ToString()">
+                                                                        </a>
+                                                                    </div>
+                                                                    <h3>
+                                                                        <a href="#" title="@r["TEN"].ToString()">@r["TEN"].ToString()</a>
+                                                                    </h3>
+                                                                    <div class="pi-price">@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(r["YTE_GIA_BAN"].ToString()))</div>
+                                                                </div>
+                                                            }
+                                                        </div>
+                                                    }
+                                                </div>
+                                            }
+                                        </div>
+                                                }
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- end : Content -->
+
+<script type="text/javascript">
+    function ShowMenuTopImg(id) {
+        var totalWidth = $(id).width();
+        var totalItem = $(id + " div div").length;
+        console.log(totalItem);
+        var itemWidth = totalWidth / totalItem;
+        debugger;
+        $(".cate-top-img div").css({ "width": itemWidth + "px", "float": "left" });
+        $(".cate-top-img div img").css("width", itemWidth + "px");
+        //var rightHeight = document.getElementById("widget-sanpham").clientHeight;
+        //var groupMenuHeight = document.getElementById("link_submenu_vertical").clientHeight;
+        //var height = rightHeight - groupMenuHeight - 87;
+        //var count = parseInt(height / 110);
+        //if (height % 110 > 0)
+        //    height = 110 * (count + 1);
+        //else
+        //    height = 110 * count;
+        //var attribute = "width: 206px; padding: 0; overflow: hidden; height:" + height + "px; max-height:995px;";
+        //document.getElementById("grBestBuys").setAttribute("style", attribute);
+    }
+    $(window).load(function () {
+        ShowMenuTopImg('#menuTopImg');
+    });
+</script>

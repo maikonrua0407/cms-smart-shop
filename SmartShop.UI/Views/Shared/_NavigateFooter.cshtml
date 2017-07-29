@@ -1,0 +1,54 @@
+﻿@using SmartShop.UI
+
+@{
+    var aGroup = ArticalCatSvr.GetAllItem().Where(e => e.ArticalCatID != 5 && e.ParentID != 5);
+}
+<div class="upfooter clear">
+    <div class="upfooter_holder">
+        <div class="footer-top row-fluid">
+            @{   
+                foreach (var item in aGroup.Where(e => e.ParentID == 0).OrderBy(e => e.Order))
+                {
+                    var artical = ArticalSvr.GetSameCat(item.ArticalCatID);
+                    <div class="footer-module span2">
+                        <div class="footer-title">@item.ArticalCatName<span class="cret"></span></div>
+
+                        @if (aGroup.Where(e => e.ParentID == item.ArticalCatID).Count() > 0)
+                        {
+                            <ul>
+                                @foreach (var sitem in aGroup.Where(e => e.ParentID == item.ArticalCatID).OrderBy(e => e.Order).Skip(0).Take(5))
+                                {
+                                    <li><a href="@AppEnv.ApplicationPath/TinTuc?ID=@sitem.ArticalCatID">@sitem.ArticalCatName</a></li>
+                                }
+                            </ul>
+                        }
+                        @if (artical.Count() > 0)
+                        {
+                            <ul>
+                                @foreach (var sitem in artical.Take(5))
+                                {
+                                    <li><a href="@AppEnv.ApplicationPath/TinBai?ID=@sitem.ArticalID">@sitem.Title</a></li>
+                                }
+                            </ul>
+                        }
+                    </div>
+                }
+            }
+
+            <div class="footer-userful span4">
+                <div class="footer-module-bottom">
+                    <iframe src="//www.facebook.com/plugins/likebox.php?href=https%3A%2F%2Fwww.facebook.com%2Fbcare.vn&amp;width&amp;height=170&amp;colorscheme=light&amp;show_faces=true&amp;header=false&amp;stream=false&amp;show_border=false" scrolling="no" frameborder="0" style="border: none; overflow: hidden; height: 160px;" allowtransparency="true"></iframe>
+                </div>
+                <div class="footer-module-bottom">
+                    <div class="footer-bottom-title">Đăng ký nhận tin</div>
+                    <div class="send-email">
+                        <div class="input">
+                            <input id="input-send-email" type="text" autocomplete="off" placeholder="Email...." onkeypress="checkEnter(event, this);" />
+                            <a class="btn-send" href="javascript:void(0);" onclick="sendMail('input-send-email');">Gửi</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

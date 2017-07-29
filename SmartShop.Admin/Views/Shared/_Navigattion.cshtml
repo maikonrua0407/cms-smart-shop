@@ -1,0 +1,328 @@
+﻿@using SmartShop.DAL
+@using SmartShop.Admin.Common
+@using SmartShop.Utilities
+
+@{
+    var currentUrl = HttpContext.Current.Request.Url.AbsolutePath;
+    List<SYS_MENU> lstMenu = SmartShop.Admin.SysMenuSvr.GetAllMenu();
+    List<SYS_MENU> lstLevel1 = lstMenu.Where(e => e.PARENT_ID.IsNullOrEmptyOrSpace()).ToList();
+}
+
+<aside id="left-panel">
+
+    <!-- User info -->
+    <div class="login-info">
+        <span>
+            <!-- User image size is adjusted inside CSS, it should stay as it -->
+
+            <a href="javascript:void(0);" id="show-shortcut">
+                <img src="@Url.Content("~/Content/img/avatars/sunny.png")" alt="me" class="online" />
+                <span>Trường.Lê 
+                </span>
+                <i class="fa fa-angle-down"></i>
+            </a>
+
+        </span>
+    </div>
+    <!-- end user info -->
+
+    <!-- NAVIGATION : This navigation is also responsive
+
+			To make this navigation dynamic please make sure to link the node
+			(the reference to the nav > ul) after page load. Or the navigation
+			will not initialize.
+			-->
+    <nav>
+        <!-- NOTE: Notice the gaps after each icon usage <i></i>..
+				Please note that these links work a bit different than
+				traditional href="" links. See documentation for details.
+				-->
+
+        <ul>
+            <li class="">
+                <a href="@Url.Content("~/Home")" title="Dashboard"><i class="fa fa-lg fa-fw fa-home"></i><span class="menu-item-parent">Dashboard</span></a>
+            </li>
+            @{
+                var href = "";
+                foreach (var sysMenuL1 in lstLevel1)
+                {
+                    href = Url.Content("~/" + sysMenuL1.CONTROLER_NAME + "/" + sysMenuL1.ACTION_NAME);
+                    List<SYS_MENU> lstLevel2 = lstMenu.Where(e => !e.PARENT_ID.IsNullOrEmpty() && e.PARENT_ID.Equals(sysMenuL1.MENU_ID)).ToList();
+                    if (!lstLevel2.IsNullOrEmpty() && lstLevel2.Count > 0)
+                    {
+                <li>
+                    <a href="javascript:void(0);"><i class="fa fa-lg fa-fw @sysMenuL1.ICON_SEQ"></i><span class="menu-item-parent">@sysMenuL1.MENU_NAME</span></a>
+                    <ul>
+                        @foreach (var sysMenuL2 in lstLevel2)
+                        {
+                            href = Url.Content("~/" + sysMenuL2.CONTROLER_NAME + "/" + sysMenuL2.ACTION_NAME);
+                            List<SYS_MENU> lstLevel3 = lstMenu.Where(e => !e.PARENT_ID.IsNullOrEmpty() && e.PARENT_ID.Equals(sysMenuL2.MENU_ID)).ToList();
+                            if (!lstLevel2.IsNullOrEmpty() && lstLevel3.Count > 0)
+                            {               
+                            <li>
+                                <a href="javascript:void(0);"><i class="fa fa-fw @sysMenuL2.ICON_SEQ" style="margin-right:5px;"></i>@sysMenuL2.MENU_NAME</a>
+                                <ul>
+                                    @foreach (var sysMenuL3 in lstLevel3)
+                                    {
+                                        href = Url.Content("~/" + sysMenuL3.CONTROLER_NAME + "/" + sysMenuL3.ACTION_NAME);
+                                        if (currentUrl.Equals(href))
+                                        {
+                                        <li class="active">
+                                            <a href="@href"><i class="fa fa-fw @sysMenuL3.ICON_SEQ" style="margin-right:5px;"></i>@sysMenuL3.MENU_NAME</a>
+                                        </li>
+                                        }
+                                        else
+                                        {
+                                        <li>
+                                            <a href="@href"><i class="fa fa-fw @sysMenuL3.ICON_SEQ" style="margin-right:5px;"></i>@sysMenuL3.MENU_NAME</a>
+                                        </li>
+                                        }
+                                    }
+                                </ul>
+                            </li>
+                            }
+                            else
+                            {
+                                if (currentUrl.Equals(href))
+                                {
+                                <li class="active">
+                                    <a href="@href"><i class="fa fa-fw @sysMenuL2.ICON_SEQ" style="margin-right:5px;"></i>@sysMenuL2.MENU_NAME</a>
+                                </li>
+                                }
+                                else
+                                {
+                                <li>
+                                    <a href="@href"><i class="fa fa-fw @sysMenuL2.ICON_SEQ" style="margin-right:5px;"></i>@sysMenuL2.MENU_NAME</a>
+                                </li>
+                                }
+                            }
+                        }
+                    </ul>
+                </li>
+                    }
+                    else
+                    {
+                <li>
+                    <a href="@href"><i class="fa fa-lg fa-fw @sysMenuL1.ICON_SEQ"></i><span class="menu-item-parent">@sysMenuL1.MENU_NAME</span></a>
+                </li>
+                    }
+                }
+            }
+            @*<li>
+                <a href="ajax/inbox.html"><i class="fa fa-lg fa-fw fa-inbox"></i><span class="menu-item-parent">Inbox</span><span class="badge pull-right inbox-badge">14</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-bar-chart-o"></i><span class="menu-item-parent">Graphs</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/flot.html">Flot Chart</a>
+                    </li>
+                    <li>
+                        <a href="ajax/morris.html">Morris Charts</a>
+                    </li>
+                    <li>
+                        <a href="ajax/inline-charts.html">Inline Charts</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-table"></i><span class="menu-item-parent">Tables</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/table.html">Normal Tables</a>
+                    </li>
+                    <li>
+                        <a href="ajax/datatables.html">Data Tables</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-pencil-square-o"></i><span class="menu-item-parent">Forms</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/form-elements.html">Smart Form Elements</a>
+                    </li>
+                    <li>
+                        <a href="ajax/form-templates.html">Smart Form Layouts</a>
+                    </li>
+                    <li>
+                        <a href="ajax/validation.html">Smart Form Validation</a>
+                    </li>
+                    <li>
+                        <a href="ajax/bootstrap-forms.html">Bootstrap Form Elements</a>
+                    </li>
+                    <li>
+                        <a href="ajax/plugins.html">Form Plugins</a>
+                    </li>
+                    <li>
+                        <a href="ajax/wizard.html">Wizards</a>
+                    </li>
+                    <li>
+                        <a href="ajax/other-editors.html">Bootstrap Editors</a>
+                    </li>
+                    <li>
+                        <a href="ajax/dropzone.html">Dropzone <span class="badge pull-right inbox-badge bg-color-yellow">new</span></a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-desktop"></i><span class="menu-item-parent">UI Elements</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/general-elements.html">General Elements</a>
+                    </li>
+                    <li>
+                        <a href="ajax/buttons.html">Buttons</a>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);">Icons</a>
+                        <ul>
+                            <li>
+                                <a href="ajax/fa.html"><i class="fa fa-plane"></i>Font Awesome</a>
+                            </li>
+                            <li>
+                                <a href="ajax/glyph.html"><i class="glyphicon glyphicon-plane"></i>Glyph Icons</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="ajax/grid.html">Grid</a>
+                    </li>
+                    <li>
+                        <a href="ajax/treeview.html">Tree View</a>
+                    </li>
+                    <li>
+                        <a href="ajax/nestable-list.html">Nestable Lists</a>
+                    </li>
+                    <li>
+                        <a href="ajax/jqui.html">JQuery UI</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-folder-open"></i><span class="menu-item-parent">6 Level Navigation</span></a>
+                <ul>
+                    <li>
+                        <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>2nd Level</a>
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>3ed Level </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>4th Level</a>
+                                        <ul>
+                                            <li>
+                                                <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                            </li>
+                                            <li>
+                                                <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>5th Level</a>
+                                                <ul>
+                                                    <li>
+                                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                                    </li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>Folder</a>
+
+                        <ul>
+                            <li>
+                                <a href="javascript:void(0);"><i class="fa fa-fw fa-folder-open"></i>3ed Level </a>
+                                <ul>
+                                    <li>
+                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);"><i class="fa fa-fw fa-file-text"></i>File</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="ajax/calendar.html"><i class="fa fa-lg fa-fw fa-calendar"><em>3</em></i> <span class="menu-item-parent">Calendar</span></a>
+            </li>
+            <li>
+                <a href="ajax/widgets.html"><i class="fa fa-lg fa-fw fa-list-alt"></i><span class="menu-item-parent">Widgets</span></a>
+            </li>
+            <li>
+                <a href="ajax/gallery.html"><i class="fa fa-lg fa-fw fa-picture-o"></i><span class="menu-item-parent">Gallery</span></a>
+            </li>
+            <li>
+                <a href="ajax/gmap-xml.html"><i class="fa fa-lg fa-fw fa-map-marker"></i><span class="menu-item-parent">Google Map Skins</span><span class="badge bg-color-greenLight pull-right inbox-badge">9</span></a>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-windows"></i><span class="menu-item-parent">Miscellaneous</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/typography.html">Typography</a>
+                    </li>
+                    <li>
+                        <a href="ajax/pricing-table.html">Pricing Tables</a>
+                    </li>
+                    <li>
+                        <a href="ajax/invoice.html">Invoice</a>
+                    </li>
+                    <li>
+                        <a href="login.html" target="_top">Login</a>
+                    </li>
+                    <li>
+                        <a href="register.html" target="_top">Register</a>
+                    </li>
+                    <li>
+                        <a href="lock.html" target="_top">Locked Screen</a>
+                    </li>
+                    <li>
+                        <a href="ajax/error404.html">Error 404</a>
+                    </li>
+                    <li>
+                        <a href="ajax/error500.html">Error 500</a>
+                    </li>
+                    <li>
+                        <a href="ajax/blank_.html">Blank Page</a>
+                    </li>
+                    <li>
+                        <a href="ajax/email-template.html">Email Template</a>
+                    </li>
+                    <li>
+                        <a href="ajax/search.html">Search Page</a>
+                    </li>
+                    <li>
+                        <a href="ajax/ckeditor.html">CK Editor</a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="javascript:void(0);"><i class="fa fa-lg fa-fw fa-file"></i><span class="menu-item-parent">Other Pages</span></a>
+                <ul>
+                    <li>
+                        <a href="ajax/forum.html">Forum Layout</a>
+                    </li>
+                    <li>
+                        <a href="ajax/profile.html">Profile</a>
+                    </li>
+                    <li>
+                        <a href="ajax/timeline.html">Timeline</a>
+                    </li>
+                </ul>
+            </li>*@
+        </ul>
+    </nav>
+    <span class="minifyme"><i class="fa fa-arrow-circle-left hit"></i></span>
+
+</aside>

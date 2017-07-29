@@ -1,0 +1,31 @@
+﻿@using SmartShop.UI
+@using SmartShop.Utilities
+@model SmartShop.DAL.ProductGroup
+
+@{
+    var group = ProductGroupSvr.GetByParrent(Model.ProductGroupID);
+    var parentUrl = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + Model.ProductGroupID;
+    var groupName = Model.GroupName;
+    if (!group.Any())
+    {
+        group = ProductGroupSvr.GetByParrent(Model.GroupParrentID.Value);
+        parentUrl = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + Model.GroupParrentID;
+        groupName = ProductGroupSvr.getParrent(Model.ProductGroupID).GroupName;
+    }
+
+}
+<div id="link_submenu_vertical">
+    <div class="nav-cat-title small green"><a href="@parentUrl">@groupName</a></div>
+    @if (group.Any())
+    {
+        <ul class="list-group margin-bottom-25 sidebar-menu">
+            @foreach (var item in group)
+            {
+                var url = Html.Raw(Url.Action("Index", "Nhomsanpham")) + "?groupId=" + item.ProductGroupID;
+                <li class="list-group-item clearfix">
+                    <a href="@url">@item.GroupName</a>
+                </li>
+            }
+        </ul>
+    }
+</div>

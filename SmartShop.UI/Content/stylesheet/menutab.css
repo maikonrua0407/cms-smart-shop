@@ -1,0 +1,237 @@
+@import url(http://fonts.googleapis.com/css?family=Capriola);
+/* Let's import the lovely google font, please keep this line at the top of your stylesheet */
+/* Menu CSS */#cssmenu,
+#cssmenu ul,
+#cssmenu ul li,
+#cssmenu ul li a {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: 'Arial', sans-serif;
+}
+#cssmenu:before,
+#cssmenu:after,
+#cssmenu > ul:before,
+#cssmenu > ul:after {
+  content: '';
+  display: table;
+}
+#cssmenu:after,
+#cssmenu > ul:after {
+  clear: both;
+}
+#cssmenu {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 1;
+  height: 46px;
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/bottom-bg.png) repeat-x center bottom;
+  border-radius: 2px;
+}
+#cssmenu ul {
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/nav-bg.png) repeat-x 0px 4px;
+  height: 46px;
+}
+#cssmenu ul li {
+  float: left;
+  list-style: none;
+}
+#cssmenu ul li a {
+  display: block;
+  height: 28px;
+  padding: 12px 30px 0;
+  margin: 4px 2px 0;
+  border-radius: 2px 2px 0 0;
+  text-decoration: none;
+  font-size: 15px !important;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  opacity: .9;
+}
+#cssmenu ul li:first-child a {
+  margin: 150px 2px 0 0;
+}
+#cssmenu ul li a:hover,
+#cssmenu ul li.active a {
+  background: url(../imgs/content_tab/color.png) center bottom;
+  display: block;
+  height: 28px;
+  margin-top: 0px;
+  padding-top: 16px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+#tabslide ul,
+#tabslide ul li,
+#tabslide ul li a {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: 'Arial', sans-serif;
+}
+#tabslide:before,
+#tabslide:after,
+#tabslide > ul:before,
+#tabslide > ul:after {
+  content: '';
+  display: table;
+}
+#tabslide:after,
+#tabslide > ul:after {
+  clear: both;
+}
+#tabslide {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 1;
+  height: 46px;
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/bottom-bg.png) repeat-x center bottom;
+  border-radius: 2px;
+}
+#tabslide ul {
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/nav-bg.png) repeat-x 0px 4px;
+  height: 46px;
+}
+#tabslide ul li {
+  float: left;
+  list-style: none;
+}
+#tabslide ul li a {
+  display: block;
+  height: 28px;
+  padding: 12px 30px 0;
+  margin: 4px 2px 0;
+  border-radius: 2px 2px 0 0;
+  text-decoration: none;
+  font-size: 15px !important;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  opacity: .9;
+}
+#tabslide ul li:first-child a {
+  margin: 150px 2px 0 0;
+}
+#tabslide ul li a:hover,
+#tabslide ul li.active a {
+  background: url(../imgs/content_tab/color.png) center bottom;
+  display: block;
+  height: 28px;
+  margin-top: 0px;
+  padding-top: 16px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+#tabbottom ul,
+#tabbottom ul li,
+#tabbottom ul li a {
+  padding: 0;
+  margin: 0;
+  line-height: 1;
+  font-family: 'Arial', sans-serif;
+}
+#tabbottom:before,
+#tabbottom:after,
+#tabbottom > ul:before,
+#tabbottom > ul:after {
+  content: '';
+  display: table;
+}
+#tabbottom:after,
+#tabbottom > ul:after {
+  clear: both;
+}
+#tabbottom {
+  width: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  zoom: 1;
+  height: 46px;
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/bottom-bg.png) repeat-x center bottom;
+  border-radius: 2px;
+}
+#tabbottom ul {
+  border-radius: 5px 5px 0 0;
+  background: url(../imgs/content_tab/nav-bg.png) repeat-x 0px 4px;
+  height: 46px;
+}
+#tabbottom ul li {
+  float: left;
+  list-style: none;
+}
+#tabbottom ul li a {
+  display: block;
+  height: 28px;
+  padding: 12px 30px 0;
+  margin: 4px 2px 0;
+  border-radius: 2px 2px 0 0;
+  text-decoration: none;
+  font-size: 15px !important;
+  color: white;
+  text-shadow: 0 1px 1px rgba(0, 0, 0, 0.75);
+  font-weight: 400;
+  opacity: .9;
+}
+#tabbottom ul li:first-child a {
+  margin: 150px 2px 0 0;
+}
+#tabbottom ul li a:hover,
+#tabbottom ul li.active a {
+  background: url(../imgs/content_tab/color.png) center bottom;
+  display: block;
+  height: 28px;
+  margin-top: 0px;
+  padding-top: 16px;
+  color: #fff;
+  text-shadow: 0 1px 1px rgba(255, 255, 255, 0.35);
+  opacity: 1;
+}
+
+.ccontent-left
+{
+    width:978px;
+    float: left;
+}
+.ccontent-right
+{
+    float: left;
+    position: absolute;
+    width: 205px;
+    background-color: #FFFFFF;
+    border: 1px solid #cbdfec;
+    border-radius: 0 0 5px 5px;
+    font-family: Arial;
+    height: 260px;
+    margin-left: 10px;
+    overflow: hidden;
+}
+.ccontent-right ul
+{
+    padding-top:5px;
+}
+.ccontent-right ul li {
+    border: 1px solid #e7e9ea;
+    margin-bottom: 10px;
+    margin-right: 20px;
+    padding: 10px;
+}
+
+.ccontent-right ul li a img {
+    border: medium none;
+    height: 136px;
+    width: 136px;
+    margin-left:10px;
+}
+

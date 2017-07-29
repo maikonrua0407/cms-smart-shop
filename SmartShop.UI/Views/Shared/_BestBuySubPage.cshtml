@@ -1,0 +1,30 @@
+﻿@using System.Data
+@using SmartShop.UI
+
+@{
+    int totalRecord = 0;
+    DataSet ds = ProductSvr.GetSanPhamTheoDieuKien("", "XEM", "GIAM", 20, 1, ref totalRecord);
+}
+
+<div class="sidebar-products clearfix">
+    <div class="nav-cat-title small green"><a href="#">Sản phẩm bán chạy</a></div>
+    <div id="grBestBuys" class="contentbestbuy">
+        @if (ds != null && ds.Tables.Count > 0)
+        {
+            DataTable dt = ds.Tables[0];
+            foreach (DataRow r in dt.Rows)
+            {
+                var gr = ProductGroupSvr.GetByID(Convert.ToInt32(r["NHOM"]));
+                var cat = ProductGroupSvr.GetAllItem().Where(e => e.CategoryID == null);
+                string path = HeThong.duongdan_anhSP(Convert.ToInt32(r["ID"]), r["YTE_ANH_CHINH"].ToString());
+                <div class="item">
+                    <a href="@AppEnv.ApplicationPath">
+                        <img src="@path" alt="@r["TEN"].ToString()">
+                    </a>
+                    <h3><a href="shop-item.html">@r["TEN"].ToString()</a></h3>
+                    <div class="price">@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(r["YTE_GIA_BAN"].ToString()))</div>
+                </div>
+            }
+        }
+    </div>
+</div>

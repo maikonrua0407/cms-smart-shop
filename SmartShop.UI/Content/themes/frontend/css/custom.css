@@ -1,0 +1,344 @@
+/* here you can put your own css to customize and override the theme */
+.brands .owl-item {
+    margin: 10px 0;
+}
+
+.cdtop {
+    margin-top: 0 !important;
+    position: fixed;
+    top: 0;
+    z-index: 10000;
+}
+
+.no-padding-right {
+    padding-right: 0;
+}
+
+.list-unstyled {
+    margin-top: 10px;
+    margin-left: 0;
+}
+
+.ext_bottom_footer_text {
+    text-align: center;
+}
+
+.cate-item {
+    margin-top: 20px;
+}
+
+.menutop {
+    width: 100%;
+    background: #e84d1c;
+    margin-top: -22px;
+}
+
+#menutop_holder {
+    background-color: #1B92CE;
+    background-image: -moz-linear-gradient(top,#21adda,#116abb);
+    background-image: -ms-linear-gradient(top,#21adda,#116abb);
+    background-image: -webkit-gradient(linear,0 0,0 100%,from(#21adda),to(#116abb));
+    background-image: -webkit-linear-gradient(top,#21adda,#116abb);
+    background-image: -o-linear-gradient(top,#21adda,#116abb);
+    background-repeat: repeat-x;
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#21adda', endColorstr='#116abb', GradientType=0);
+    border: 1px solid #0a3c5a;
+    background-repeat: repeat-x;
+    height: 39px;
+    margin: 0 auto;
+    text-align: center;
+    border: 1px solid #000000;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    border-radius: 5px;
+    behavior: url('../../../www.vinainfotech.com/Portal/stylesheet/PIE.htc');
+    position: relative;
+}
+
+.menutop_holder {
+    background-color: #105CAA;
+    background-repeat: repeat-x;
+    -webkit-border-radius: 4px 4px 4px 0;
+    -moz-border-radius: 4px 4px 4px 0;
+    border-radius: 4px 4px 4px 0;
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    -moz-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.065);
+    height: 45px;
+    margin: 0 auto;
+    position: relative;
+    text-align: center;
+}
+
+.menusub_holder {
+    margin-left: auto;
+    margin-right: auto;
+    position: relative;
+    text-align: center;
+    width: 978px;
+}
+
+.menutop_holder .header-cart {
+    background: url("../imgs/header/bg_cart.jpg") no-repeat scroll right top rgba(0, 0, 0, 0);
+    float: right;
+    height: 100%;
+    position: relative;
+    width: 213px;
+}
+
+    .menutop_holder .header-cart a.cart-link {
+        color: #FFFFFF;
+        background: #105caa;
+        font-size: 1.2em;
+        font-weight: bold;
+        left: 5px;
+        position: absolute;
+        text-transform: uppercase;
+        top: 10px;
+    }
+
+        .menutop_holder .header-cart a.cart-link:hover {
+            text-decoration: none;
+        }
+
+    .menutop_holder .header-cart span.count {
+        background: url("../imgs/header/cart_qty.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+        color: #FFFFFF;
+        left: 81px;
+        padding: 6px 15px 10px;
+        position: absolute;
+        top: -5px;
+    }
+
+.cate-item .title {
+    background: #428bca;
+    padding: 10px;
+}
+
+    .cate-item .title a, .cate-item .title a:hover {
+        color: #fff;
+    }
+
+        .cate-item .title a:hover {
+            text-decoration: none;
+        }
+
+.parent-cate-title {
+    position: relative;
+    cursor: pointer;
+    height: 46px;
+}
+
+.parent-category {
+    position: absolute;
+    display: none;
+    top: 40px;
+    background: #999;
+    z-index: 1000;
+    margin-left: -15px;
+    padding: -3px;
+    list-style: none;
+    padding-left: 0;
+    min-width: 300px;
+}
+
+.parent-cate-title:hover .parent-category {
+    display: block;
+}
+
+.parent-cate-title p {
+    padding-top: 10px;
+    padding-bottom: 0;
+    color: #fff;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+ul.parent-category > li, ul.parent-category > li > ul > li, ul.parent-category > li > ul > li > ul > li {
+    line-height: 33px;
+    border-top: 1px solid #ddd;
+    border-bottom: 1px solid #ddd;
+    padding-left: 15px;
+    position: relative;
+}
+
+.cate-child-one, .cate-child-two {
+    position: absolute;
+    display: none;
+    background: #fff;
+    margin-left: 0px;
+    padding-left: 0;
+    margin-top: 1px;
+    min-width: 300px;
+    left: 300px;
+    top: -2px;
+    list-style: none;
+}
+
+.cate-child-one {
+    background: #e84d1c;
+}
+
+.cate-child-two {
+    background: #e68464;
+}
+
+ul.parent-category > li:hover {
+    background: #e84d1c;
+}
+
+    ul.parent-category > li:hover a {
+        text-decoration: none;
+    }
+
+ul.parent-category > li a {
+    color: #fff;
+}
+
+ul.parent-category > li:hover > ul, ul.parent-category > li > ul > li:hover > ul {
+    display: block;
+}
+
+    ul.parent-category > li:hover > ul > li:hover {
+        background: #e68464;
+    }
+
+        ul.parent-category > li:hover > ul > li:hover > a, ul.parent-category > li > ul > li > ul > li:hover > a {
+            color: yellow;
+        }
+
+#searchDiv, .top-cart-block {
+    margin-top: 7px;
+}
+
+.header .logo {
+    float: left;
+    margin-top: 10px;
+}
+
+    .header .logo strong {
+        font-size: 0;
+        height: 0;
+        left: -999em;
+        line-height: 0;
+        overflow: hidden;
+        position: absolute;
+        text-indent: -999em;
+        top: -999em;
+        width: 0;
+    }
+
+.header .middle-header {
+    clear: both;
+    height: 118px;
+    position: relative;
+    width: 100%;
+}
+
+    .header .middle-header .social li {
+        float: left;
+        padding: 0 5px;
+    }
+
+    .header .middle-header .slogan, .header .middle-header .social {
+        list-style: none;
+        margin-top: 30px;
+        float: left;
+    }
+
+        .header .middle-header .slogan li {
+            float: left;
+            padding: 0 20px;
+        }
+
+.header .bottom-header {
+    background: url("../imgs/header/bg_bottom_header.gif") repeat-x scroll left top rgba(0, 0, 0, 0);
+    border-radius: 3px;
+    height: 51px;
+    margin: 0 auto;
+    position: absolute;
+    top: 118px;
+    width: 1024px;
+}
+
+    .header .bottom-header .header-cart {
+        background: url("../imgs/header/bg_cart.jpg") no-repeat scroll right top rgba(0, 0, 0, 0);
+        float: right;
+        height: 100%;
+        position: relative;
+        width: 213px;
+    }
+
+        .header .bottom-header .header-cart a.cart-link {
+            color: #FFFFFF;
+            font-size: 1.2em;
+            font-weight: bold;
+            left: 5px;
+            position: absolute;
+            text-transform: uppercase;
+            top: 10px;
+        }
+
+        .header .bottom-header .header-cart span.count {
+            background: url("../imgs/header/cart_qty.jpg") no-repeat scroll center center rgba(0, 0, 0, 0);
+            color: #FFFFFF;
+            left: 81px;
+            padding: 6px 15px 10px;
+            position: absolute;
+            top: -5px;
+        }
+/*category style*/
+.nav-cat-title {
+    padding: 10px 15px;
+    background: #e84d1c;
+    color: #fff;
+}
+
+    .nav-cat-title a {
+        color: #fff;
+        font-size: 18px;
+        font-weight: bold;
+    }
+
+#widget-sanpham {
+    margin-top: -20px;
+}
+
+    #widget-sanpham .cate-item {
+        padding: 0 10px;
+    }
+
+        #widget-sanpham .cate-item .title {
+            padding: 0 10px 10px 10px;
+        }
+
+            #widget-sanpham .cate-item .title a {
+                font-size: 16px;
+            }
+
+.contentbestbuy {
+    padding: 0;
+    overflow: hidden;
+    margin-top: 20px;
+}
+
+ul.cate-top-img {
+    margin: 0;
+    list-style: none;
+}
+
+.cate-top-img p {
+    padding: 5px;
+    color: #3e4d5c;
+}
+
+    .cate-top-img a:hover p {
+        color: #E02222;
+    }
+    .cate-top-img a:hover {
+        text-decoration: none;
+    }
+
+.product-item h3 a:hover {
+    text-decoration: none;
+}

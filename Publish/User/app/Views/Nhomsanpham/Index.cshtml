@@ -1,0 +1,109 @@
+﻿@using SmartShop.UI
+@using System.Data
+@model CatGroupProductModel
+
+@{
+    ViewBag.Title = Model.ObjCategory.CategoryName;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var group = ProductGroupSvr.GetByCategory(Model.ObjCategory.CategoryID);
+}
+
+<!-- start: Banner  -->
+@Html.Partial("_MenuSubPage")
+<!-- end: Banner  -->
+<!-- start: Promotion  -->
+<!-- start : Content -->
+<div class="zonespace"></div>
+<div class="content">
+    <!-- start: phan trai -->
+    <div class="left_content">
+        @Html.Partial("_MenuLeft")
+        @Html.Partial("_ProviderSubPage")
+        @Html.Partial("_BestBuySubPage")
+
+    </div>
+    <!-- end : phan trai -->
+    <!-- start: phan phai -->
+    <div class="right_content">
+        <div class="nav-pro-title medium grey">
+            <a href="trang-chu">Trang chủ</a> > <a href="trang-chu" alt="@Model.ObjCategory.CategoryName" class="current">
+                <h2>@Model.ObjCategory.CategoryName</h2>
+            </a>
+        </div>
+        <div id="widget-sanpham" class="widget">
+            @if (group.Where(e => e.GroupParrentID == null).Count() > 0)
+            {
+                foreach (var item in group.Where(e => e.GroupParrentID == null))
+                {
+                    List<string> lstThuongHieu = new List<string>();
+                    var cat = ProductCatSvr.GetById(item.CategoryID.Value);
+                    int totalRecord = 0;
+                    DataSet ds = ProductSvr.GetSanPhamTheoDieuKien(item.ProductGroupID.ToString(), "ID", "GIAM", 100, 1, ref totalRecord);
+                    if (ds != null && ds.Tables.Count > 0)
+                    {
+                        DataTable dt = ds.Tables[0];
+                        if (dt != null && dt.Rows.Count > 0)
+                        {
+                            totalRecord = 0;
+                            var id = "mycarouse" + item.ProductGroupID;
+                <div class="zonespace"></div>
+                <div class="cattab">
+                    <span class="maingrouppro">@item.GroupName</span>
+                </div>
+                <div class="jcarousel-skin-GroupProduct">
+                    <div style="position: relative; display: block;" class="jcarousel-container jcarousel-container-horizontal">
+                        <div style="position: relative;" class="jcarousel-clip jcarousel-clip-horizontal">
+                            <ul style="overflow: hidden; position: relative; top: 0px; margin: 0px; padding: 0px; left: 0px; width: 3262px;" id="@id" class="jcarousel-list jcarousel-list-horizontal">
+                                @foreach (DataRow r in dt.Rows)
+                                {
+                                    if (totalRecord < 10 && ((lstThuongHieu.Count > 0 && lstThuongHieu.Contains(r["YTE_THUONG_HIEU"].ToString())) || lstThuongHieu.Count == 0))
+                                    {
+                                        totalRecord += 1;
+                                        string path = HeThong.duongdan_anhSP(Convert.ToInt32(r["ID"]), r["YTE_ANH_CHINH"].ToString());
+                                    <li jcarouselindex="@(dt.Rows.IndexOf(r) + 1)" style="float: left; list-style: none outside none;" class="jcarousel-item jcarousel-item-horizontal jcarousel-item-1 jcarousel-item-1-horizontal">
+                                        <a onclick="javascript:ClientAddToListLastItems('vn','@r["ID"].ToString()');" href="@AppEnv.ApplicationPath">
+                                            <img class="jcarousel_imgAdv" src="@path" border="0">
+                                        </a>
+                                        <div class="productname">
+                                            <a class="name-pro" onclick="javascript:ClientAddToListLastItems('vn','@r["ID"].ToString()');" href="@AppEnv.ApplicationPath">
+                                                <span>
+                                                    <h1>@r["TEN"].ToString()</h1>
+                                                </span>
+                                            </a>
+                                        </div>
+                                        <span class="productprice">@String.Format("{0:0,0;(0:0,0);Liên hệ}", decimal.Parse(r["YTE_GIA_BAN"].ToString()))</span>
+                                    </li>
+                                    }
+                                }
+                            </ul>
+                        </div>
+                        <div disabled="true" style="display: block;" class="jcarousel-prev jcarousel-prev-horizontal jcarousel-prev-disabled jcarousel-prev-disabled-horizontal">
+                        </div>
+                        <div disabled="false" style="display: block;" class="jcarousel-next jcarousel-next-horizontal">
+                        </div>
+                    </div>
+                </div>
+                        }
+                    }
+                }
+            }
+        </div>
+        <script type="text/javascript">
+            $(window).load(function () {
+                var rightHeight = document.getElementById("widget-sanpham").clientHeight;
+                var groupMenuHeight = document.getElementById("link_submenu_vertical").clientHeight;
+                var height = rightHeight - groupMenuHeight - 87;
+                var count = parseInt(height / 110);
+                if (height % 110 > 0)
+                    height = 110 * (count + 1);
+                else
+                    height = 110 * count;
+                var attribute = "width: 206px; padding: 0; overflow: hidden; height:" + height + "px; max-height:995px;";
+                document.getElementById("grBestBuys").setAttribute("style", attribute);
+            });
+        </script>
+    </div>
+    <!-- end : phan phai -->
+</div>
+<!-- end : Content -->

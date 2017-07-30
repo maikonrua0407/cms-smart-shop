@@ -5,54 +5,53 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="e36b0f7a46974a0ab10a9d12653cc9e7" Name="Diagram1">
-        <EntityTypeShape EntityType="SmartShopModel.Advertisement" Width="1.5" PointX="7.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Album" Width="1.5" PointX="7.75" PointY="1.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Artical" Width="1.5" PointX="9.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ArticalCategory" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Category" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Color" Width="1.5" PointX="10.75" PointY="5.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Comment" Width="1.5" PointX="11.75" PointY="8.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.HT_THONG_TIN" Width="1.5" PointX="12.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Image" Width="1.5" PointX="10" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Inventory" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.InventoryDetail" Width="1.5" PointX="5.25" PointY="1.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.InventoryPeriod" Width="1.5" PointX="0.75" PointY="1.625" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Member" Width="1.5" PointX="12.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.MemberGroup" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Product" Width="1.5" PointX="0.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductDesign" Width="1.5" PointX="2.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductMaterial" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductSet" Width="1.5" PointX="10.75" PointY="13.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductSize" Width="1.5" PointX="13.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductStyle" Width="1.5" PointX="14.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductType" Width="1.5" PointX="14.75" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.Provider" Width="1.5" PointX="12.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ShoppingOrder" Width="1.5" PointX="5.75" PointY="5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.ShoppingOrderDetail" Width="1.5" PointX="8" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.SP_SAN_PHAM_TTINH" Width="1.5" PointX="14.75" PointY="14.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.SP_TTINH_GTRI" Width="1.5" PointX="4.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.SP_TTINH_LOAI" Width="1.5" PointX="15.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.StockOrder" Width="1.5" PointX="0.75" PointY="6" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.StockOrderDetail" Width="1.5" PointX="3" PointY="7.125" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.SYS_MENU" Width="1.5" PointX="16.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.SYS_VERSION" Width="1.5" PointX="15.75" PointY="9.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.sysdiagram" Width="1.5" PointX="6.75" PointY="16.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.WebInfo" Width="1.5" PointX="16.75" PointY="12.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwAdv_Category" Width="1.5" PointX="0.75" PointY="17.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwArtical" Width="1.5" PointX="17.75" PointY="6.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwComment" Width="1.5" PointX="18.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwProduct" Width="1.5" PointX="2.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwProduct_Img" Width="1.5" PointX="18.75" PointY="11.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwProductSet_Product" Width="1.5" PointX="12.75" PointY="18.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwProductSetAllName" Width="1.5" PointX="18.75" PointY="15.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwShoppingOrder_Member" Width="1.5" PointX="4.75" PointY="19.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="SmartShopModel.vwShoppingOrderDetail" Width="1.5" PointX="19.75" PointY="5.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="SmartShopModel.Advertisement" Width="1.5" PointX="5.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Album" Width="1.5" PointX="5.75" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Artical" Width="1.5" PointX="0.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ArticalCategory" Width="1.5" PointX="2.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Category" Width="1.5" PointX="4.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Color" Width="1.5" PointX="6.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Comment" Width="1.5" PointX="7.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.HT_THONG_TIN" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Image" Width="1.5" PointX="8" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Inventory" Width="1.5" PointX="3" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.InventoryDetail" Width="1.5" PointX="5.25" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.InventoryPeriod" Width="1.5" PointX="0.75" PointY="0.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Member" Width="1.5" PointX="0.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.MemberGroup" Width="1.5" PointX="2.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductDesign" Width="1.5" PointX="4.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductMaterial" Width="1.5" PointX="8.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductSet" Width="1.5" PointX="6.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductSize" Width="1.5" PointX="8.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductStyle" Width="1.5" PointX="9.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductType" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.Provider" Width="1.5" PointX="0.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ShoppingOrder" Width="1.5" PointX="0.75" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ShoppingOrderDetail" Width="1.5" PointX="3" PointY="4.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.SP_SAN_PHAM_TTINH" Width="1.5" PointX="10.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.SP_TTINH_GTRI" Width="1.5" PointX="2.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.SP_TTINH_LOAI" Width="1.5" PointX="4.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.StockOrder" Width="1.5" PointX="0.75" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.StockOrderDetail" Width="1.5" PointX="3" PointY="2.875" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.SYS_MENU" Width="1.5" PointX="10.75" PointY="6.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.SYS_VERSION" Width="1.5" PointX="6.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.WebInfo" Width="1.5" PointX="10.75" PointY="8.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwAdv_Category" Width="1.5" PointX="8.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwArtical" Width="1.5" PointX="10.75" PointY="10.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwComment" Width="1.5" PointX="11.75" PointY="0.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwProduct" Width="1.5" PointX="11.75" PointY="4.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwProduct_Img" Width="1.5" PointX="0.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwProductSet_Product" Width="1.5" PointX="12.75" PointY="2.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwProductSetAllName" Width="1.5" PointX="2.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwShoppingOrder_Member" Width="1.5" PointX="4.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.vwShoppingOrderDetail" Width="1.5" PointX="12.75" PointY="6.75" IsExpanded="false" />
         <AssociationConnector Association="SmartShopModel.FK_Image_Album" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_Inventory_InventoryPeriod" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_InventoryDetail_Inventory" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_ShoppingOrderDetail_ShoppingOrder" ManuallyRouted="false" />
         <AssociationConnector Association="SmartShopModel.FK_StockOrderDetail_StockOrder" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="SmartShopModel.ProductGroup" Width="1.5" PointX="7.375" PointY="19.75" />
+        <EntityTypeShape EntityType="SmartShopModel.Product" Width="1.5" PointX="6.75" PointY="12.75" IsExpanded="false" />
+        <EntityTypeShape EntityType="SmartShopModel.ProductGroup" Width="1.5" PointX="12.75" PointY="8.75" IsExpanded="false" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

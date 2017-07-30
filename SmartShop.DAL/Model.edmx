@@ -202,6 +202,7 @@
           <Property Name="SizeID" Type="int" />
           <Property Name="Viewed" Type="int" Nullable="false" />
           <Property Name="Available" Type="int" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ProductDesign">
           <Key>
@@ -223,6 +224,7 @@
           <Property Name="CategoryID" Type="int" />
           <Property Name="Description" Type="nvarchar" MaxLength="255" />
           <Property Name="Img" Type="varchar" MaxLength="255" />
+          <Property Name="ShortName" Type="nvarchar" MaxLength="255" />
         </EntityType>
         <EntityType Name="ProductMaterial">
           <Key>
@@ -411,16 +413,6 @@
           <Property Name="LOAI" Type="varchar" MaxLength="50" />
           <Property Name="PHIEN_BAN" Type="varchar" MaxLength="50" />
           <Property Name="MO_TA" Type="nvarchar" MaxLength="255" />
-        </EntityType>
-        <EntityType Name="sysdiagrams">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-          <Property Name="principal_id" Type="int" Nullable="false" />
-          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-          <Property Name="version" Type="int" />
-          <Property Name="definition" Type="varbinary(max)" />
         </EntityType>
         <EntityType Name="WebInfo">
           <Key>
@@ -1110,7 +1102,6 @@ warning 6002: The table/view 'SmartShop.dbo.vwShoppingOrderDetail' does not have
           <EntitySet Name="StockOrderDetail" EntityType="Self.StockOrderDetail" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_MENU" EntityType="Self.SYS_MENU" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="SYS_VERSION" EntityType="Self.SYS_VERSION" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="WebInfo" EntityType="Self.WebInfo" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="vwAdv_Category" EntityType="Self.vwAdv_Category" store:Type="Views" store:Schema="dbo">
             <DefiningQuery>SELECT 
@@ -1320,7 +1311,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <EntitySet Name="InventoryPeriods" EntityType="SmartShopModel.InventoryPeriod" />
           <EntitySet Name="Members" EntityType="SmartShopModel.Member" />
           <EntitySet Name="MemberGroups" EntityType="SmartShopModel.MemberGroup" />
-          <EntitySet Name="Products" EntityType="SmartShopModel.Product" />
           <EntitySet Name="ProductDesigns" EntityType="SmartShopModel.ProductDesign" />
           <EntitySet Name="ProductMaterials" EntityType="SmartShopModel.ProductMaterial" />
           <EntitySet Name="ProductSets" EntityType="SmartShopModel.ProductSet" />
@@ -1337,7 +1327,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <EntitySet Name="StockOrderDetails" EntityType="SmartShopModel.StockOrderDetail" />
           <EntitySet Name="SYS_MENU" EntityType="SmartShopModel.SYS_MENU" />
           <EntitySet Name="SYS_VERSION" EntityType="SmartShopModel.SYS_VERSION" />
-          <EntitySet Name="sysdiagrams" EntityType="SmartShopModel.sysdiagram" />
           <EntitySet Name="WebInfoes" EntityType="SmartShopModel.WebInfo" />
           <EntitySet Name="vwAdv_Category" EntityType="SmartShopModel.vwAdv_Category" />
           <EntitySet Name="vwArticals" EntityType="SmartShopModel.vwArtical" />
@@ -1625,6 +1614,7 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
             <Parameter Name="CurrentPage" Mode="In" Type="Int32" />
             <Parameter Name="TotalRecord" Mode="InOut" Type="Int32" />
           </FunctionImport>
+          <EntitySet Name="Products" EntityType="SmartShopModel.Product" />
           <EntitySet Name="ProductGroups" EntityType="SmartShopModel.ProductGroup" />
         </EntityContainer>
         <ComplexType Name="T_AccessMember_UserName_Result">
@@ -1848,21 +1838,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <Property Name="GroupName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
           <Property Name="Description" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
         </EntityType>
-        <EntityType Name="Product">
-          <Key>
-            <PropertyRef Name="ProductID" />
-          </Key>
-          <Property Name="ProductID" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="ProductCode" Type="String" MaxLength="255" Unicode="false" FixedLength="false" />
-          <Property Name="ProductName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="NoSymbolName" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-          <Property Name="ProductSetID" Type="Int32" />
-          <Property Name="ProductGroupID" Type="Int32" />
-          <Property Name="Quantity" Type="Double" />
-          <Property Name="SizeID" Type="Int32" />
-          <Property Name="Viewed" Type="Int32" Nullable="false" />
-          <Property Name="Available" Type="Int32" />
-        </EntityType>
         <EntityType Name="ProductDesign">
           <Key>
             <PropertyRef Name="ProductDesignID" />
@@ -2063,16 +2038,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <Property Name="LOAI" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="PHIEN_BAN" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
           <Property Name="MO_TA" Type="String" MaxLength="255" Unicode="true" FixedLength="false" />
-        </EntityType>
-        <EntityType Name="sysdiagram">
-          <Key>
-            <PropertyRef Name="diagram_id" />
-          </Key>
-          <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
-          <Property Name="principal_id" Type="Int32" Nullable="false" />
-          <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
-          <Property Name="version" Type="Int32" />
-          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
         <EntityType Name="WebInfo">
           <Key>
@@ -2769,6 +2734,22 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <Property Type="String" Name="Description" Nullable="true" MaxLength="255" />
           <Property Type="Int64" Name="RowNumber" Nullable="true" />
         </ComplexType>
+        <EntityType Name="Product">
+          <Key>
+            <PropertyRef Name="ProductID" />
+          </Key>
+          <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="ProductCode" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ProductName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="NoSymbolName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="ProductSetID" Type="Int32" />
+          <Property Name="ProductGroupID" Type="Int32" />
+          <Property Name="Quantity" Type="Double" />
+          <Property Name="SizeID" Type="Int32" />
+          <Property Name="Viewed" Type="Int32" Nullable="false" />
+          <Property Name="Available" Type="Int32" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+        </EntityType>
         <EntityType Name="ProductGroup">
           <Key>
             <PropertyRef Name="ProductGroupID" />
@@ -2780,6 +2761,7 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
           <Property Name="CategoryID" Type="Int32" />
           <Property Name="Description" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="Img" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="ShortName" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -2981,22 +2963,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
                 <ScalarProperty Name="MemberGroupID" ColumnName="MemberGroupID" />
                 <ScalarProperty Name="GroupName" ColumnName="GroupName" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Products">
-            <EntityTypeMapping TypeName="SmartShopModel.Product">
-              <MappingFragment StoreEntitySet="Product">
-                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
-                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
-                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
-                <ScalarProperty Name="NoSymbolName" ColumnName="NoSymbolName" />
-                <ScalarProperty Name="ProductSetID" ColumnName="ProductSetID" />
-                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
-                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
-                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
-                <ScalarProperty Name="Viewed" ColumnName="Viewed" />
-                <ScalarProperty Name="Available" ColumnName="Available" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3210,17 +3176,6 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
                 <ScalarProperty Name="LOAI" ColumnName="LOAI" />
                 <ScalarProperty Name="PHIEN_BAN" ColumnName="PHIEN_BAN" />
                 <ScalarProperty Name="MO_TA" ColumnName="MO_TA" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="sysdiagrams">
-            <EntityTypeMapping TypeName="SmartShopModel.sysdiagram">
-              <MappingFragment StoreEntitySet="sysdiagrams">
-                <ScalarProperty Name="name" ColumnName="name" />
-                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
-                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
-                <ScalarProperty Name="version" ColumnName="version" />
-                <ScalarProperty Name="definition" ColumnName="definition" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -3678,9 +3633,27 @@ FROM [dbo].[vwShoppingOrderDetail] AS [vwShoppingOrderDetail]</DefiningQuery>
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
+          <EntitySetMapping Name="Products">
+            <EntityTypeMapping TypeName="SmartShopModel.Product">
+              <MappingFragment StoreEntitySet="Product">
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
+                <ScalarProperty Name="Available" ColumnName="Available" />
+                <ScalarProperty Name="Viewed" ColumnName="Viewed" />
+                <ScalarProperty Name="SizeID" ColumnName="SizeID" />
+                <ScalarProperty Name="Quantity" ColumnName="Quantity" />
+                <ScalarProperty Name="ProductGroupID" ColumnName="ProductGroupID" />
+                <ScalarProperty Name="ProductSetID" ColumnName="ProductSetID" />
+                <ScalarProperty Name="NoSymbolName" ColumnName="NoSymbolName" />
+                <ScalarProperty Name="ProductName" ColumnName="ProductName" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="ProductGroups">
             <EntityTypeMapping TypeName="SmartShopModel.ProductGroup">
               <MappingFragment StoreEntitySet="ProductGroup">
+                <ScalarProperty Name="ShortName" ColumnName="ShortName" />
                 <ScalarProperty Name="Img" ColumnName="Img" />
                 <ScalarProperty Name="Description" ColumnName="Description" />
                 <ScalarProperty Name="CategoryID" ColumnName="CategoryID" />

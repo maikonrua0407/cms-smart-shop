@@ -6,6 +6,7 @@ using System.Web.Security;
 using System.Data;
 using System.Reflection;
 using System.Web.UI.WebControls;
+using SmartShop.Utilities.Helper;
 
 namespace SmartShop.DAL
 {
@@ -15,6 +16,75 @@ namespace SmartShop.DAL
         {
             var dc = new SmartShopEntities();
             return dc.ProductGroups.SingleOrDefault(c => c.ProductGroupID == id);
+        }
+
+        public static ProductGroup Insert(ProductGroup obj)
+        {
+
+            ProductGroup kq = null;
+            SmartShopEntities entities = new SmartShopEntities();
+            try
+            {
+                entities.ProductGroups.Add(obj);
+                entities.SaveChanges();
+                kq = obj;
+            }
+            catch (System.Exception ex)
+            {
+                kq = null;
+            }
+            finally
+            {
+                entities = null;
+            }
+            return kq;
+        }
+
+        public static ProductGroup Update(ProductGroup obj)
+        {
+            ProductGroup kq = null;
+            SmartShopEntities entities = new SmartShopEntities();
+            try
+            {
+                var original = entities.ProductGroups.Find(obj.ProductGroupID);
+                if (original != null)
+                {
+                    BoHelper.CopyData(obj, original);
+                    entities.SaveChanges();
+                    kq = obj;
+                }
+            }
+            catch (System.Exception ex)
+            {
+                kq = null;
+            }
+            finally
+            {
+                entities = null;
+            }
+            return kq;
+        }
+
+        public static bool Delete(int id)
+        {
+            bool kq = true;
+            SmartShopEntities entities = new SmartShopEntities();
+            ProductGroup obj = GetByID(id);
+            try
+            {
+                entities.ProductGroups.Attach(obj);
+                entities.ProductGroups.Remove(obj);
+                entities.SaveChanges();
+            }
+            catch (System.Exception ex)
+            {
+                kq = false;
+            }
+            finally
+            {
+                entities = null;
+            }
+            return kq;
         }
 
         public static ProductGroup GetByNameNoSymbol(string strName)
@@ -106,22 +176,6 @@ namespace SmartShop.DAL
             catch (Exception)
             {
                 return null;
-            }
-        }
-
-        public static bool Delete_ID(int id)
-        {
-            try
-            {
-                var dc = new SmartShopEntities();
-                var obj = dc.ProductGroups.SingleOrDefault(c => c.ProductGroupID == id);
-                dc.ProductGroups.Remove(obj);
-                dc.SaveChanges();
-                return true;
-            }
-            catch
-            {
-                return false;
             }
         }
 

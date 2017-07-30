@@ -8,9 +8,24 @@ namespace SmartShop.Admin
 {
     public static class ProductGroupSvr
     {
-        public static ProductGroup GetByID(int id)
+        public static ProductGroup GetById(int id)
         {
             return ProductGroupDAL.GetByID(id);
+        }
+
+        public static ProductGroup Insert(ProductGroup obj)
+        {
+            return ProductGroupDAL.Insert(obj);
+        }
+
+        public static ProductGroup Update(ProductGroup obj)
+        {
+            return ProductGroupDAL.Update(obj);
+        }
+
+        public static bool Delete(int id)
+        {
+            return ProductGroupDAL.Delete(id);
         }
 
         public static ProductGroup GetByNameNoSymbol(string strName)
@@ -31,11 +46,6 @@ namespace SmartShop.Admin
         public static IQueryable<ProductGroup> GetByParrent(int pParrentID)
         {
             return ProductGroupDAL.GetByParrent(pParrentID);
-        }
-
-        public static bool Delete(int id)
-        {
-            return ProductGroupDAL.Delete_ID(id);
         }
 
         public static ProductGroup getParrent(int pGroupID)

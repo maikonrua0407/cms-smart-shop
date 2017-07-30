@@ -42,7 +42,6 @@ namespace SmartShop.DAL
         public DbSet<InventoryPeriod> InventoryPeriods { get; set; }
         public DbSet<Member> Members { get; set; }
         public DbSet<MemberGroup> MemberGroups { get; set; }
-        public DbSet<Product> Products { get; set; }
         public DbSet<ProductDesign> ProductDesigns { get; set; }
         public DbSet<ProductMaterial> ProductMaterials { get; set; }
         public DbSet<ProductSet> ProductSets { get; set; }
@@ -59,7 +58,6 @@ namespace SmartShop.DAL
         public DbSet<StockOrderDetail> StockOrderDetails { get; set; }
         public DbSet<SYS_MENU> SYS_MENU { get; set; }
         public DbSet<SYS_VERSION> SYS_VERSION { get; set; }
-        public DbSet<sysdiagram> sysdiagrams { get; set; }
         public DbSet<WebInfo> WebInfoes { get; set; }
         public DbSet<vwAdv_Category> vwAdv_Category { get; set; }
         public DbSet<vwArtical> vwArticals { get; set; }
@@ -70,6 +68,7 @@ namespace SmartShop.DAL
         public DbSet<vwProductSetAllName> vwProductSetAllNames { get; set; }
         public DbSet<vwShoppingOrder_Member> vwShoppingOrder_Member { get; set; }
         public DbSet<vwShoppingOrderDetail> vwShoppingOrderDetails { get; set; }
+        public DbSet<Product> Products { get; set; }
         public DbSet<ProductGroup> ProductGroups { get; set; }
     
         [EdmFunction("SmartShopEntities", "T_AccessMember_UserName")]

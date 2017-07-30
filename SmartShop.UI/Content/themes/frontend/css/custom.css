@@ -33,7 +33,11 @@
 
 .menutop {
     width: 100%;
-    background: #e84d1c;
+    background-color: #1a82f7;
+    background: -moz-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -o-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -ms-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -webkit-gradient(linear,left top,right top,color-stop(0.3, #e84d1c),color-stop(0.7, #ad320b));
     margin-top: -22px;
 }
 
@@ -218,7 +222,6 @@ ul.parent-category > li:hover > ul, ul.parent-category > li > ul > li:hover > ul
 
 .header .logo {
     float: left;
-    margin-top: 10px;
 }
 
     .header .logo strong {
@@ -235,7 +238,6 @@ ul.parent-category > li:hover > ul, ul.parent-category > li > ul > li:hover > ul
 
 .header .middle-header {
     clear: both;
-    height: 118px;
     position: relative;
     width: 100%;
 }
@@ -247,7 +249,7 @@ ul.parent-category > li:hover > ul, ul.parent-category > li > ul > li:hover > ul
 
     .header .middle-header .slogan, .header .middle-header .social {
         list-style: none;
-        margin-top: 30px;
+        margin-top: 10px;
         float: left;
     }
 
@@ -371,15 +373,45 @@ ul.cate-top-img {
     margin-bottom: 10px;
 }
 
+.header-group {
+    background-color: #1a82f7;
+    background: -moz-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -o-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -ms-linear-gradient(left, #cc0000 30%, #330000 70%);
+    background: -webkit-gradient(linear,left top,right top,color-stop(0.3, #e84d1c),color-stop(0.7, #ad320b));
+}
+
+.header-navigation {
+    font: 13px 'Open Sans', Arial, sans-serif;
+}
+
+.ecommerce .header-navigation {
+    font: 13px 'Open Sans', Arial, sans-serif;
+    margin: 5px 0;
+}
+
 .header-navigation > ul > li > a {
-    padding: 5px;
-    color : #e25326;
+    padding: 2px;
+    color: #e25326;
     font-size: 14px;
     text-transform: capitalize;
 }
-.ecommerce .header-navigation > ul > li > a{
-    padding: 5px;
-    color : #e25326;
+
+.ecommerce .header-navigation > ul > li > a {
+    padding: 2px;
+    color: #fff;
     font-size: 14px;
     text-transform: capitalize;
+}
+
+.sidebar-products{
+    background: none repeat scroll 0 0 #FFFFFF;
+    border: 1px solid #cbdfec;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0 10px 10px -10px #C0C0C0;
+    clear: both;
+}
+.sidebar-products .item {
+    padding-bottom: 0;
+    margin-bottom:2px;
 }

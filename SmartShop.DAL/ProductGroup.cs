@@ -21,5 +21,6 @@ namespace SmartShop.DAL
         public Nullable<int> CategoryID { get; set; }
         public string Description { get; set; }
         public string Img { get; set; }
+        public string ShortName { get; set; }
     }
 }

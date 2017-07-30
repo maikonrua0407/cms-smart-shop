@@ -21,6 +21,7 @@
     <IISExpressWindowsAuthentication />
     <IISExpressUseClassicPipelineMode />
     <TargetFrameworkProfile />
+    <UseGlobalApplicationHostFile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -927,6 +928,9 @@
     <Content Include="Views\ChiTietSanPham\Index.cshtml" />
     <Content Include="Views\ChiTietSanPham\GetData.cshtml" />
     <Content Include="Views\ChiTietSanPham\GetDetail.cshtml" />
+    <Content Include="Views\NhomSanPham\Index.cshtml" />
+    <Content Include="Views\NhomSanPham\GetData.cshtml" />
+    <Content Include="Views\NhomSanPham\GetDetail.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

@@ -24,5 +24,6 @@ namespace SmartShop.DAL
         public Nullable<int> SizeID { get; set; }
         public int Viewed { get; set; }
         public Nullable<int> Available { get; set; }
+        public string ShortName { get; set; }
     }
 }

@@ -271,9 +271,6 @@
     <Compile Include="StockOrderDetail.cs">
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
-    <Compile Include="sysdiagram.cs">
-      <DependentUpon>Model.tt</DependentUpon>
-    </Compile>
     <Compile Include="SysMenuDal.cs" />
     <Compile Include="SysVersionDal.cs" />
     <Compile Include="SYS_MENU.cs">

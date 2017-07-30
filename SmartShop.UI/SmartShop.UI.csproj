@@ -123,7 +123,9 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Common\AppEnv.cs" />
     <Compile Include="Common\Constant.cs" />
+    <Compile Include="Common\HeThong.cs" />
     <Compile Include="Controllers\GioHangController.cs" />
     <Compile Include="Controllers\NhomchitietController.cs" />
     <Compile Include="Controllers\NhomsanphamController.cs" />
@@ -144,9 +146,6 @@
     <Compile Include="Service\ProductPropertySvr.cs" />
     <Compile Include="Service\ProductSvr.cs" />
     <Compile Include="Service\ProviderSvr.cs" />
-    <Compile Include="Service\SysMenuSvr.cs" />
-    <Compile Include="Service\SysUserSvr.cs" />
-    <Compile Include="Service\SysVersionSvr.cs" />
     <Compile Include="Service\WebInfoSvr.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -703,7 +702,6 @@
     <Content Include="Views\Timsanpham\Index.cshtml" />
     <Content Include="Views\Nhomchitiet\GetData.cshtml" />
     <Content Include="Views\Shared\_Categories.cshtml" />
-    <Content Include="Views\Shared\_BestBuyGroup.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
